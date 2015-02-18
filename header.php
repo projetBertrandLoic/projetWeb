@@ -84,7 +84,7 @@
                             <div class="col-md-6">
                                 <div class="main-menu">
                                     <ul>
-                                        <li><a href="index.php">Accueil</a></li>
+                                        <li><a href="index.php">Home</a></li>
                                         <li><a href="produits.php">Produits</a></li>
 										<li><a href="panier.php">Mon panier</a></li>
                                         <li><a href="contact.html">Nous contacter</a></li>
