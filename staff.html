@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Page d'administration</title>
+</head>
+<body>
+<?php
+include ("transfert.php");
+if ( isset($_FILES['fic']) )
+{
+transfert();
+}
+?>
+<h3>Envoi d'une image</h3>
+<form enctype="multipart/form-data" action="#" method="post">
+<input type="hidden" name="MAX_FILE_SIZE" value="250000" />
+<input type="file" name="fic" size=50 />
+<input type="submit" value="Envoyer" />
+
+</form>
+<form class="form-horizontal">
+  <div class="form-group">
+	<textarea class="form-control" rows="3"></textarea>
+	<input class="btn btn-default" type="submit" value="Submit">
+  </div>
+</form>
+</body>
+</html>
