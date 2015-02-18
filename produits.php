@@ -247,7 +247,7 @@
                     <div class="pagination">
                         <div class="row">   
                             <div class="col-md-12">
-                                <ul>
+                                <ul>    
                                     <li><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
@@ -259,4 +259,4 @@
             </div>
 
 
-<?php include_once("header.php"); ?>   
+<?php include_once("footer.php"); ?>   
