@@ -78,7 +78,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="logo">
-                                    <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
+                                    <a href="#"><img src="images/logo.png" title="Grill Template" alt="Le site de Loic Et Bertrand" ></a>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -87,7 +87,7 @@
                                         <li><a href="index.php">Accueil</a></li>
                                         <li><a href="produits.php">Produits</a></li>
 										<li><a href="panier.php">Mon panier</a></li>
-                                        <li><a href="contact.html">Nous contacter</a></li>
+                                        <li><a href="contact.php">Nous contacter</a></li>
                                     </ul>
                                 </div>
                             </div>

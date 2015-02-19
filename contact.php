@@ -6,7 +6,7 @@
                         <div class="col-md-12">
                             <div class="heading-content">
                                 <h2>Contact Us</h2>
-                                <span>Home / <a href="contact-us.html">Contact Us</a></span>
+                                <span>Home / <a href="contact.php">Contactez nous</a></span>
                             </div>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="heading-section">
-                                <h2>Feel free to send a message</h2>
+                                <h2>Ecrivez nous un message</h2>
                                 <img src="images/under-heading.png" alt="" >
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                                         </div>   
                                                     </div>                              
                                                     <div class="send">
-                                                        <button type="submit">Send</button>
+                                                        <button type="submit">Envoyer</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -72,7 +72,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="heading-section">
-                                <h2>Find Us On Map</h2>
+                                <h2>Trouvez nous sur la carte</h2>
                                 <img src="images/under-heading.png" alt="" >
                             </div>
                         </div>
@@ -89,10 +89,7 @@
          
                        
                     <?php include_once("footer.php") ?>
-        <script src="js/vendor/jquery-1.11.0.min.js"></script>
-        <script src="js/vendor/jquery.gmap3.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        
 
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false">
         </script>

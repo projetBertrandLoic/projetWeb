@@ -34,7 +34,29 @@
                             </ul>
                         </div>
                     </div>
-					
+				
+					<!--
+					<?php 
+							include_once ("connect.php");
+							$coupsDeCoeur=mysqli_query($co,"select * from images");
+						
+							while ($tab = mysqli_fetch_assoc($coupsDeCoeur)){
+								
+								echo "<div class='col-md-4 col-sm-6'><div class='blog-post'><div class='blog-thumb'>";
+								echo '<img src="data:'.$tab['img_type'].';base64,'.base64_encode($tab['img_blob']).'"/>';
+								echo "</div>";
+								echo "<div class='blog-content'>";
+                                echo "<div class='content-show'>";
+                                echo "<h4><a href='single-post.html'>".$tab['img_titre']."</a></h4>";
+                                echo "<span>".$tab['img_date']."</span>";
+                                echo "</div>";
+                                echo "<div class='content-hide'>";
+                                echo "<p>".$tab['img_desc']."</p>";
+                                echo "</div></div>";
+								echo "</div></div>";
+							}
+						?>
+						-->
 				
                     <div class="row" id="Container">
                         <div class="col-md-3 col-sm-6 mix portfolio-item Pizza">       
