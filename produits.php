@@ -38,11 +38,11 @@
 					<!--
 					<?php 
 							include_once ("connect.php");
-							$coupsDeCoeur=mysqli_query($co,"select * from images");
+							$imgMenu=mysqli_query($co,"select * from images");
 						
-							while ($tab = mysqli_fetch_assoc($coupsDeCoeur)){
+							while ($tab = mysqli_fetch_assoc($imgMenu)){
 								
-								echo "<div class='col-md-4 col-sm-6'><div class='blog-post'><div class='blog-thumb'>";
+								echo "<div class='row' id='Container'>";
 								echo '<img src="data:'.$tab['img_type'].';base64,'.base64_encode($tab['img_blob']).'"/>';
 								echo "</div>";
 								echo "<div class='blog-content'>";

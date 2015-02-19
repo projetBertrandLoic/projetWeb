@@ -115,7 +115,7 @@
 					
 						<?php 
 							include_once ("connect.php");
-							$coupsDeCoeur=mysqli_query($co,"select * from images");
+							$coupsDeCoeur=mysqli_query($co,"select * from images where ");
 						
 							while ($tab = mysqli_fetch_assoc($coupsDeCoeur)){
 								
@@ -256,12 +256,12 @@
                                    
 										<?php 
 										include_once ("connect.php");
-										$comment=mysqli_query($co,"select commentaire,nomClient from avisclients");
+										$comment=mysqli_query($co,"select texte,id_user from avis_client");
 									
 											while ($tab = mysqli_fetch_assoc($comment)){
 												echo "<li>";
 												echo "<div class='testimonails-content'>";
-												echo"<p>".$tab['commentaire']."</p>";
+												echo"<p>".$tab['texte']."</p>";
 												echo"<h6>".$tab['nomClient']."</h6>";
 												echo "</div>";
 												echo "</li>";
