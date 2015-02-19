@@ -86,39 +86,25 @@
             </div>
 
 
-            <footer>
-                <div class="container">
-                    <div class="top-footer">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="subscribe-form">
-                                    <span>Get in touch with us</span>
-                                    <form method="get" class="subscribeForm">
-                                        <input id="subscribe" type="text" />
-                                        <input type="submit" id="submitButton" />
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="social-bottom">
-                                    <span>Follow us:</span>
-                                    <ul>
-                                        <li><a href="#" class="fa fa-facebook"></a></li>
-                                        <li><a href="#" class="fa fa-twitter"></a></li>
-                                        <li><a href="#" class="fa fa-rss"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<script>
+         
+                       
+                    <?php include_once("footer.php") ?>
+        <script src="js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="js/vendor/jquery.gmap3.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false">
+        </script>
+                
+        <script>
 		
 		var map;
 		
         function initialize()
         {
 			var map_options = {
-			  center: new google.maps.LatLng(16.8496189,96.1288854),
+			  center: new google.maps.LatLng(48.711763,2.17055,15),
 			  zoom: 15,
 			  mapTypeId:google.maps.MapTypeId.ROADMAP
 			  };
@@ -134,8 +120,4 @@
 		});
         </script>
 
-    
-                    <?php include_once("footer.php") ?>
-       
-                
-        
+   

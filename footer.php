@@ -2,23 +2,23 @@
                
                             </div>
                      
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                                 <div class="more-info">
-                                    <h4 class="footer-title">Plus d'info</h4>
-                                    <p>Sed dignissim, diam id molestie faucibus, purus nisl pretium quam, in pulvinar velit massa id elit.</p>
+                                    <h4 class="footer-title">Contact</h4>
                                     <ul>
                                         <li><i class="fa fa-phone"></i>01 46 46 00 01</li>
-                                        <li><i class="fa fa-globe"></i>3, avenue des champs elysée, 75016 Paris</li>
+                                        <li><i class="fa fa-globe"></i>Plateau du Moulon, Rue Noetzlin, 91400 Orsay</li>
                                         <li><i class="fa fa-envelope"></i><a href="#">RestoRap.com</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bottom-footer">
-                        <p>Copyright © 2015 <a href="#">Bertric</a></p>
+                    <div class="col-md-2">
+						<div class="bottom-footer">
+							<p>Copyright © 2015 <a href="#">Bertric</a></p>
+						</div>
                     </div>
-                    
                 </div>
             </footer>
 

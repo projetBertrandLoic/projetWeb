@@ -49,7 +49,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">Vege Pizza</a></h3>
+                                    <h3><a href="article.php">Vege Pizza</a></h3>
                                     <span class="text-category">$16.00</span>
                                 </div>
                             </div>          
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">Ginger Tea</a></h3>
+                                    <h3><a href="article.php">Ginger Tea</a></h3>
                                     <span class="text-category">$24.00</span>
                                 </div>
                             </div>          
@@ -83,7 +83,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">Vege Green Salad</a></h3>
+                                    <h3><a href="article.php">Vege Green Salad</a></h3>
                                     <span class="text-category">$12.00</span>
                                 </div>
                             </div>          
@@ -100,7 +100,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">Herbal Hot Tea</a></h3>
+                                    <h3><a href="article.php">Herbal Hot Tea</a></h3>
                                     <span class="text-category">$8.00</span>
                                 </div>
                             </div>          
@@ -117,7 +117,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">Fruit Salad</a></h3>
+                                    <h3><a href="article.php">Fruit Salad</a></h3>
                                     <span class="text-category">$16.00</span>
                                 </div>
                             </div>          
@@ -134,7 +134,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">Big Hamburger</a></h3>
+                                    <h3><a href="article.php">Big Hamburger</a></h3>
                                     <span class="text-category">$8.00</span>
                                 </div>
                             </div>          
@@ -151,7 +151,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">Chocolate Cake</a></h3>
+                                    <h3><a href="article.php">Chocolate Cake</a></h3>
                                     <span class="text-category">$14.00</span>
                                 </div>
                             </div>          
@@ -168,7 +168,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">Pizza Taste</a></h3>
+                                    <h3><a href="article.php">Pizza Taste</a></h3>
                                     <span class="text-category">$15.00</span>
                                 </div>
                             </div>          
@@ -185,7 +185,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">Hot Meat Grilled</a></h3>
+                                    <h3><a href="article.php">Hot Meat Grilled</a></h3>
                                     <span class="text-category">$16.00</span>
                                 </div>
                             </div>          
@@ -202,7 +202,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">New Ginger Taste</a></h3>
+                                    <h3><a href="article.php">New Ginger Taste</a></h3>
                                     <span class="text-category">$18.00</span>
                                 </div>
                             </div>          
@@ -219,7 +219,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">Hot Coffee</a></h3>
+                                    <h3><a href="article.php">Hot Coffee</a></h3>
                                     <span class="text-category">$16.00</span>
                                 </div>
                             </div>          
@@ -236,7 +236,7 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="single-post.html">SUMMER FRUIT SALADE</a></h3>
+                                    <h3><a href="article.php">SUMMER FRUIT SALADE</a></h3>
                                     <span class="text-category">$16.00</span>
                                 </div>
                             </div>          

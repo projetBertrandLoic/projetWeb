@@ -16,11 +16,11 @@
 					<form class="form-horizontal" action='' method="POST">
 						<fieldset>
 							<div id="legend">
-								<legend class="">Login</legend>
+								<legend class="">Se connecter</legend>
 							</div>    
 							<div class="control-group">
 								<!-- Username -->
-								<label class="control-label"  for="username">Username</label>
+								<label class="control-label"  for="username">Pseudo</label>
 								<div class="controls">
 									<input type="text" id="username" name="username" placeholder="" class="input-xlarge">
 								</div>
@@ -28,7 +28,7 @@
 							
 							<div class="control-group">
 								<!-- Password-->
-								<label class="control-label" for="password">Password</label>
+								<label class="control-label" for="password">Mot de passe</label>
 								<div class="controls">
 									<input type="password" id="password" name="password" placeholder="" class="input-xlarge">
 								</div>
@@ -46,16 +46,19 @@
 				</div>
 				<div class="tab-pane fade" id="create">
 					<form id="tab">
-						<label>Pseudo</label>
+						<label><h4>Pseudo</h4></label>
 						<input type="text" value="" class="input-xlarge">
-						<label>Prenom</label>
+						<label><h4>Mot de passe</h4></label>
 						<input type="text" value="" class="input-xlarge">
-						<label>Last Name</label>
+						<label><h4>Prenom</h4></label>
 						<input type="text" value="" class="input-xlarge">
-						<label>Email</label>
+						<label><h4>Nom de famille</h4></label>
 						<input type="text" value="" class="input-xlarge">
-						<label>Addresse</label>
-						<textarea value="Smith" rows="3" class="input-xlarge">
+						<label><h4>Email</h4></label>
+						<input type="text" value="" class="input-xlarge">
+						<label><h4>Addresse</h4></label>
+						</br>
+						<textarea value="" rows="3" class="input-xlarge">
 						</textarea>
 						
 						<div>
