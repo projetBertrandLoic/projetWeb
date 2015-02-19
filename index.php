@@ -114,21 +114,27 @@
                     <div class="row">
 					
 						<?php 
-							include_once ("connect.php");
-							$coupsDeCoeur=mysqli_query($co,"select * from images where ");
+							include_once ("fonctions-article.php");
+							
+							// Alimentation auto de la base à chaque refresh, à virer
+							ajouterArticleCoupDeCoeur("Hello world", "Ceci est un article Hello World", 9999.99, true);
+							// Fin alim
+							
+							$coupsDeCoeur = getCoupsDeCoeur();
 						
-							while ($tab = mysqli_fetch_assoc($coupsDeCoeur)){
+							foreach ($coupsDeCoeur as $item){
 								
 								echo "<div class='col-md-4 col-sm-6'><div class='blog-post'><div class='blog-thumb'>";
-								echo '<img src="data:'.$tab['img_type'].';base64,'.base64_encode($tab['img_blob']).'"/>';
+								echo '<img alt="" src="images/blogpost6.jpg">';
+								//echo '<img src="data:'.$tab['img_type'].';base64,'.base64_encode($tab['img_blob']).'"/>';
 								echo "</div>";
 								echo "<div class='blog-content'>";
                                 echo "<div class='content-show'>";
-                                echo "<h4><a href='single-post.html'>".$tab['img_titre']."</a></h4>";
-                                echo "<span>".$tab['img_date']."</span>";
+                                echo "<h4><a href='single-post.html'>".$item['titre']."</a></h4>";
+                                echo "<span>".$item['date_ajout']."</span>";
                                 echo "</div>";
                                 echo "<div class='content-hide'>";
-                                echo "<p>".$tab['img_desc']."</p>";
+                                echo "<p>".$item['description']."</p>";
                                 echo "</div></div>";
 								echo "</div></div>";
 							}

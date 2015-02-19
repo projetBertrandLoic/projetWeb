@@ -20,9 +20,13 @@
  }
  
  function ajouterArticle($titre, $desc, $prix) {
+	 return ajouterArticleCoupDeCoeur($titre, $desc, $prix, false);
+ }
+ 
+ function ajouterArticleCoupDeCoeur($titre, $desc, $prix, $coupDeCoeur) {
 	 global $co;
 	 $request = "INSERT INTO article (`titre`, `description`, `prix`, `date_ajout`, `coup_de_coeur`) VALUES ";
-	 $request .= "('" . $titre . "', '" . $desc . "', " . $prix . ", NOW(), false)";
+	 $request .= "('" . $titre . "', '" . $desc . "', " . $prix . ", NOW(), " . $coupDeCoeur . ")";
 	 $success = mysqli_query($co, $request);
 	 return $success;
  }
@@ -55,12 +59,12 @@ function getImagesForArticle($id) {
  function ajouterImageSurArticle($idArticle, $nomImg, $tailleImg, $typeImg, $blob) {
 	global $co;
 	$request = "INSERT INTO `image`(`nom`, `taille`, `type`, `blob`, `date`) ";
-	$request .= "VALUES ('" . $nomImg . "','" . $tailleImg . "','" . $typeImg . "','" . addslashes($blob) . "',NOW())"
+	$request .= "VALUES ('" . $nomImg . "','" . $tailleImg . "','" . $typeImg . "','" . addslashes($blob) . "',NOW())";
 	$imgUploaded = mysqli_query($co, $request);
 	$operationComplete = false;
 	if ($imgUploaded) {
 		$idImage = mysqli_insert_id($co);
-		$request = "INSERT INTO `image_article`(`id_article`, `id_image`) VALUES (" . $idArticle . "," . $idImage . ")"
+		$request = "INSERT INTO `image_article`(`id_article`, `id_image`) VALUES (" . $idArticle . "," . $idImage . ")";
 		$operationComplete = mysqli_query($co, $request);
 	}
 	return $imgUploaded && $operationComplete;
