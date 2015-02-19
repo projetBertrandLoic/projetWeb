@@ -42,37 +42,62 @@
 	 return $success;
  }
  
-  //ajouterArticle("Nouvel article", "Une desc", 50);
-  //supprimerArticle(2);
- $arr = getArticles();
- var_dump($arr);
- 
  /* Gestion des images des articles */
  
- function getImagesForArticle() {
-	 
+function getImagesForArticle($id) {
+	global $co;
+	$request = "SELECT * FROM image I, image_article IA WHERE I.id_image = IA.id_image AND IA.id_article =" . $id;
+	$result = mysqli_query($co, $request);
+	$array = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $array; 
+}
+ 
+ function ajouterImageSurArticle($idArticle, $nomImg, $tailleImg, $typeImg, $blob) {
+	global $co;
+	$request = "INSERT INTO `image`(`nom`, `taille`, `type`, `blob`, `date`) ";
+	$request .= "VALUES ('" . $nomImg . "','" . $tailleImg . "','" . $typeImg . "','" . addslashes($blob) . "',NOW())"
+	$imgUploaded = mysqli_query($co, $request);
+	$operationComplete = false;
+	if ($imgUploaded) {
+		$idImage = mysqli_insert_id($co);
+		$request = "INSERT INTO `image_article`(`id_article`, `id_image`) VALUES (" . $idArticle . "," . $idImage . ")"
+		$operationComplete = mysqli_query($co, $request);
+	}
+	return $imgUploaded && $operationComplete;
  }
  
- function ajouterImageSurArticle() {
-	 
- }
- 
- function retirerImageSurArticle() {
-	 
+ function retirerImageSurArticle($idImage) {
+	$request = "DELETE FROM `image_article` WHERE `id_image` = ". $idImage;
+	mysqli_query($co, $request);
+	$request = "DELETE FROM `image` WHERE `id_image` = ". $idImage;
+	mysqli_query($co, $request);
+	return true;
  }
  
  /* Gestion des coups de coeur */
  
  function getCoupsDeCoeur() {
-	 
+	 global $co;
+	 $request = "SELECT * FROM article WHERE `coup_de_coeur` = true";
+	 $result = mysqli_query($co, $request);
+	 $array = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	 return $array; 
  }
  
- function mettreCoupDeCoeur() {
-	 
+ function mettreCoupDeCoeur($idArticle) {
+	return actualiserCoupDeCoeur($idArticle, true);
  }
  
- function retirerCoupDeCoeur() {
-	 
+ function retirerCoupDeCoeur($idArticle) {
+	 return actualiserCoupDeCoeur($idArticle, false);
+ }
+ 
+ function actualiserCoupDeCoeur($idArticle, $coupDeCoeur) {
+	 global $co;
+	 $request = "UPDATE article SET `coup_de_coeur` = " . $coupDeCoeur;
+	 $request .= " WHERE `id_article` = " . $id;
+	 $success = mysqli_query($co, $request);
+	 return $success;
  }
 
  ?>
