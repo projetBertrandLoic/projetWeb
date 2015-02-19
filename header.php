@@ -31,7 +31,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8">
-                                <div class="utilisateurs">
+                                <div class="home-account">
                                     <a href="staff.php">Staff </a>
                                     <a href="compte.php"> Mon compte</a>
                                 </div>
@@ -45,6 +45,7 @@
 								
 								<!--mon panier chercher dans la bd les produits -->
                                     <i class="fa fa-shopping-cart"></i>
+									<a href='#'>(0 article)</a> dans votre panier (<a href='#'>€0.00</a>)
 									<?php
 										/*
 										include("fonctions-panier.php");
