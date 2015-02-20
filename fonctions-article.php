@@ -6,7 +6,7 @@ include_once('fonctions-helper.php');
 
 function getArticles() {
 	global $co;
-	$request = "SELECT * FROM article";
+	$request = "SELECT * FROM article ORDER BY id_article DESC, coup_de_coeur DESC";
 	$result = mysqli_query($co, $request);
 	$array = getArrayFromQueryResult($result);
 	return $array; 
@@ -24,12 +24,13 @@ function ajouterArticle($titre, $desc, $prix) {
 	return ajouterArticleCoupDeCoeur($titre, $desc, $prix, false);
 }
 
+// Ajoute un nouvel article et retourne son ID
 function ajouterArticleCoupDeCoeur($titre, $desc, $prix, $coupDeCoeur) {
 	global $co;
 	$request = "INSERT INTO article (`titre`, `description`, `prix`, `date_ajout`, `coup_de_coeur`) VALUES ";
 	$request .= "('" . $titre . "', '" . $desc . "', " . $prix . ", NOW(), " . $coupDeCoeur . ")";
 	$success = mysqli_query($co, $request);
-	return $success;
+	return mysqli_insert_id($co);
 }
 
 function editerArticle($id, $titre, $desc, $prix) {
@@ -48,6 +49,14 @@ function supprimerArticle($id) {
 }
 
 /* Gestion des images des articles */
+
+function getFirstImageForArticle($id) {
+	global $co;
+	$request = "SELECT * FROM image I, image_article IA WHERE I.id_image = IA.id_image AND IA.id_article =" . $id . " LIMIT 1";
+	$result = mysqli_query($co, $request);
+	$array = mysqli_fetch_assoc($result);
+	return $array; 
+}
 
 function getImagesForArticle($id) {
 	global $co;
@@ -83,7 +92,7 @@ function retirerImageSurArticle($idImage) {
 
 function getCoupsDeCoeur() {
 	global $co;
-	$request = "SELECT * FROM article WHERE `coup_de_coeur` = true";
+	$request = "SELECT * FROM article WHERE `coup_de_coeur` = true ORDER BY id_article DESC";
 	$result = mysqli_query($co, $request);
 	$array = getArrayFromQueryResult($result);
 	return $array; 

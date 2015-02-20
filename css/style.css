@@ -896,7 +896,8 @@ textarea {
 }
 
 .blog-thumb img {
-  width: 100%;
+  height: 300px;
+  display:block;
 }
 
 .blog-content {

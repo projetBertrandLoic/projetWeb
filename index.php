@@ -123,20 +123,33 @@
 							$coupsDeCoeur = getCoupsDeCoeur();
 						
 							foreach ($coupsDeCoeur as $item){
-								
-								echo "<div class='col-md-4 col-sm-6'><div class='blog-post'><div class='blog-thumb'>";
-								echo '<img alt="" src="images/blogpost6.jpg">';
-								//echo '<img src="data:'.$tab['img_type'].';base64,'.base64_encode($tab['img_blob']).'"/>';
-								echo "</div>";
-								echo "<div class='blog-content'>";
-                                echo "<div class='content-show'>";
-                                echo "<h4><a href='single-post.html'>".$item['titre']."</a></h4>";
-                                echo "<span>".$item['date_ajout']."</span>";
-                                echo "</div>";
-                                echo "<div class='content-hide'>";
-                                echo "<p>".$item['description']."</p>";
-                                echo "</div></div>";
-								echo "</div></div>";
+								$image = getFirstImageForArticle($item['id_article']);
+								?>
+								<div class='col-md-4 col-sm-6'>
+									<div class='blog-post'>
+										<div class='blog-thumb'>
+											<?php 
+											if ($image != null) {
+												echo '<img src="data:'.$image['type'].';base64,'.base64_encode($image['blob']).'"/>';
+											} else {
+												?>
+												<img alt="" src="images/blogpost6.jpg">											
+												<?php
+											}
+											?>
+										</div>
+										<div class='blog-content'>
+											<div class='content-show'>
+												<h4><a href='single-post.html'> <?=$item['titre']?></a></h4>
+												<span> <?=$item['date_ajout']?> </span>
+											</div>
+											<div class='content-hide'>
+												<p> <?=$item['description']?> </p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<?php
 							}
 						?>
                         <div class="col-md-4 col-sm-6">
