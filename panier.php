@@ -1,6 +1,6 @@
 <?php include_once("header.php"); 
 
-include_once("fonctions-panier.php");
+include_once("model/fonctions-panier.php");
 
 $erreur = false;
 

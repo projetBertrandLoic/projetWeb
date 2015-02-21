@@ -85,12 +85,6 @@
                 </div>
             </div>
 
-
-         
-                       
-                    <?php include_once("footer.php") ?>
-        
-
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false">
         </script>
                 
@@ -116,5 +110,5 @@
 		 	map.setCenter(center); 
 		});
         </script>
-
+<?php include_once("footer.php") ?>
    

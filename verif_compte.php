@@ -1,4 +1,6 @@
-<?php  include_once('connect.php');include_once("header.php");
+<?php  
+include_once('model/connect.php');
+include_once("header.php");
 
 if (!empty($_POST['pseud'])) {
 	$login = $_POST['pseud'];

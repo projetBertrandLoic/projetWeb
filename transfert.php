@@ -1,5 +1,5 @@
 <?php
-include_once("fonctions-article.php");
+include_once("model/fonctions-article.php");
 function transfert ()
 {
 	$ret = false;

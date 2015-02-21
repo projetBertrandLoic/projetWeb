@@ -37,7 +37,7 @@
 				
 					<!--
 					<?php 
-							include_once ("connect.php");
+							include_once ("model/connect.php");
 							$imgMenu=mysqli_query($co,"select * from images");
 						
 							while ($tab = mysqli_fetch_assoc($imgMenu)){

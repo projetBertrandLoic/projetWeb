@@ -29,6 +29,6 @@
         <script src="js/main.js"></script>
 
 		<!-- Fermeture de la connexion à la BDD si elle existe -->
-		<?php include("connect_end.php"); ?>
+		<?php include("model/connect_end.php"); ?>
     </body>
 </html>

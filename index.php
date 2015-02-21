@@ -114,7 +114,7 @@
                     <div class="row">
 					
 						<?php 
-							include_once ("fonctions-article.php");
+							include_once ("model/fonctions-article.php");
 							
 							// Alimentation auto de la base à chaque refresh, à virer
 							//ajouterArticleCoupDeCoeur("Hello world", "Ceci est un article Hello World", 9999.99, true);
@@ -179,7 +179,7 @@
                                 
                                    
 										<?php 
-										include_once ("connect.php");
+										include_once ("model/connect.php");
 										$comment=mysqli_query($co,"select texte,id_user from avis_client");
 									
 											while ($tab = mysqli_fetch_assoc($comment)){

@@ -50,7 +50,7 @@ ini_set('display_errors', 'On');
 								<!--mon panier chercher dans la bd les produits -->
                                     <i class="fa fa-shopping-cart"></i>
 									<?php
-										include("fonctions-panier.php");
+										include("model/fonctions-panier.php");
 										// TODO : Remplacer avec l'ID de l'utilisateur connecté
 										$idUserConnected = 1;
 										$infosPanier = getInfosPanier($idUserConnected);
