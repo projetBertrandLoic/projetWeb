@@ -2,108 +2,123 @@
 
 include_once("model/fonctions-panier.php");
 
+// TODO : Remplacer l'ID par celui de l'utilisateur connecté
+$idUserConnected = 2;
+
 $erreur = false;
 
 $action = (isset($_POST['action'])? $_POST['action']:  (isset($_GET['action'])? $_GET['action']:null )) ;
 if($action !== null)
 {
-   if(!in_array($action,array('ajout', 'suppression', 'refresh')))
-   $erreur=true;
+   if(!in_array($action,array('ajout', 'suppression', 'refresh'))) $erreur=true;
 
    //récuperation des variables en POST ou GET
-   $l = (isset($_POST['l'])? $_POST['l']:  (isset($_GET['l'])? $_GET['l']:null )) ;//libelle
-   $p = (isset($_POST['p'])? $_POST['p']:  (isset($_GET['p'])? $_GET['p']:null )) ;//prix
-   $q = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:null )) ;//quantite
+   $idArticle = (isset($_POST['l'])? $_POST['l']:  (isset($_GET['l'])? $_GET['l']:null )) ;//idArticle
+   $qte = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:null )) ;//quantite
 
-   //Suppression des espaces verticaux
-   $l = preg_replace('#\v#', '',$l);
-   //On verifie que $p soit un float
-   $p = floatval($p);
-
-   //On traite $q qui peut etre un entier simple ou un tableau d'entier
-    
-   if (is_array($q)){
-      $QteArticle = array();
+   //On traite $qte qui peut etre un entier simple ou un tableau d'entier
+   if (is_array($qte)){
+      $qtesArticle = array();
       $i=0;
-      foreach ($q as $contenu){
-         $QteArticle[$i++] = intval($contenu);
+      foreach ($qte as $contenu){
+         $qtesArticle[$i++] = intval($contenu);
       }
    }
    else
-   $q = intval($q);
-    
+   $qte = intval($qte);
 }
 
 if (!$erreur){
    switch($action){
       Case "ajout":
-         ajouterArticle($l,$q,$p);
+		// pour ajouter un article, faire une requête type "panier.php?action=ajout&l=ID_ARTICLE&q=QUANTITE_ARTICLE"
+		 ajouterArticleDansPanier($idUserConnected, $idArticle, $qte);
          break;
-
       Case "suppression":
-         supprimerArticle($l);
+		// pour supprimer un article, faire une requête type "panier.php?action=suppression&l=ID_ARTICLE"
+		 retirerArticleDePanier($idUserConnected, $idArticle);
          break;
-
       Case "refresh" :
-         for ($i = 0 ; $i < count($QteArticle) ; $i++)
-         {
-            modifierQTeArticle($_SESSION['panier']['libelleProduit'][$i],round($QteArticle[$i]));
-         }
+		 $panier = getPanier($idUserConnected);
+		 if ($panier != null && count($panier) == count($qtesArticle)) {
+			 $i = 0;
+			 foreach ($panier as $ligne){
+				modifierQteArticleDansPanier($idUserConnected, $ligne['id_article'], round($qtesArticle[$i]));
+				$i++;
+			 }
+		 }
          break;
-
       Default:
          break;
    }
 }
-if (creationPanier())
-	{
-	   $nbArticles=count($_SESSION['panier']['libelleProduit']);
-	   if ($nbArticles <= 0)
-	   echo "<tr><td>Votre panier est vide </ td></tr>";
-	   else
-	   {
-	      for ($i=0 ;$i < $nbArticles ; $i++)
-	      {
-	         echo "<tr>";
-	         echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
-	         echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/></td>";
-	         echo "<td>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."</td>";
-	         echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">XX</a></td>";
-	         echo "</tr>";
-	      }
-
-	      echo "<tr><td colspan=\"2\"> </td>";
-	      echo "<td colspan=\"2\">";
-	      echo "Total : ".MontantGlobal();
-	      echo "</td></tr>";
-
-	      echo "<tr><td colspan=\"4\">";
-	      echo "<input type=\"submit\" value=\"Rafraichir\"/>";
-	      echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
-
-	      echo "</td></tr>";
-	   }
-	}
-
 ?>   
 
-<form method="post" action="panier.php">
-<table style="width: 400px">
-	<tr>
-		<td colspan="4">Votre panier</td>
-	</tr>
-	<tr>
-		<td>Libellé</td>
-		<td>Quantité</td>
-		<td>Prix Unitaire</td>
-		<td>Action</td>
-	</tr>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="heading-section">
+				<h2>Votre panier</h2>
+				<img alt="" src="images/under-heading.png">
+			</div>
+		</div>
+	</div>
 
-</table>
-</form>
+	<div class="row">
+		<div class="col-md-12">
+			<form method="post" action="panier.php">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Libellé</th>
+							<th>Quantité</th>
+							<th>Prix Unitaire</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php 
+						$panier = getPanier($idUserConnected);
+						$infosPanier = getInfosPanier($idUserConnected);
+						
+						if ($panier != null) {
+							foreach ($panier as $ligne){
+							?>
+							<tr>
+								<td><?=$ligne['titre'];?></td>
+								<td>
+									<input type="text" size="4" name="q[]" value="<?=$ligne['quantite'];?>"/>
+								</td>
+								<td><?=$ligne['prix'];?>€</td>
+								<td><a href="panier.php?action=suppression&l=<?=$ligne['id_article'];?>">Supprimer</a></td>
+							</tr>
+							<?php
+							}
+							// Affichage du montant total
+							?>
+							<tr>
+								<td><strong>Total</strong></td>
+								<td><?=$infosPanier['nbProduits'];?></td>
+								<td><?=$infosPanier['montantTotal'];?>€</td>
+								<td></td>
+							</tr>
+							<?php
+						} else {
+							?>
+							<tr><td>Votre panier est vide </td></tr>
+							<?php
+						}
+						?>
+					</tbody>
+				</table>
+				<input type="submit" value="Rafraichir"/>
+				<input type="hidden" name="action" value="refresh"/>
+			</form>
+		</div>
+	</div>
+</div>
 
-
-<?php include_once("header.php"); ?>
+<?php include_once("footer.php"); ?>
 
 
 
