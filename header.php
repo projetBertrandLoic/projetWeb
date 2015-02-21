@@ -35,7 +35,7 @@ ini_set('display_errors', 'On');
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8">
-                                <div class="home-account">
+                                <div class="utilisateurs">
                                     <a href="staff.php">Staff </a>
                                     <a href="compte.php"> Mon compte</a>
                                 </div>
