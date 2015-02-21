@@ -87,20 +87,29 @@
 
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false">
         </script>
-                
+         
+		<!-- utilisation de l'api google pour centrer le resautant sur une carte --> 
         <script>
 		
 		var map;
 		
         function initialize()
         {
+		var orsay = new google.maps.LatLng(48.711763,2.17055,15);
 			var map_options = {
-			  center: new google.maps.LatLng(48.711763,2.17055,15),
-			  zoom: 15,
+			  center: orsay,
+			  zoom: 16,
 			  mapTypeId:google.maps.MapTypeId.ROADMAP
 			  };
 			var map = new google.maps.Map(document.getElementById("googleMap"), map_options);
+
+			var marker = new google.maps.Marker({
+				position: orsay,
+				map: map,
+				title: 'RestoRap'
+			});
         }
+		
 
         google.maps.event.addDomListener(window, 'load', initialize);
 		google.maps.event.addDomListener(window, "resize", function() 
