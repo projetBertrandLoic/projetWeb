@@ -49,30 +49,22 @@ ini_set('display_errors', 'On');
 								
 								<!--mon panier chercher dans la bd les produits -->
                                     <i class="fa fa-shopping-cart"></i>
-									<a href='panier.php'>(0 article)</a> dans votre panier (<a href='#'>€0.00</a>)
 									<?php
-										/*
 										include("fonctions-panier.php");
-
+										// TODO : Remplacer avec l'ID de l'utilisateur connecté
+										$idUserConnected = 1;
+										$infosPanier = getInfosPanier($idUserConnected);
 										
-										if (creationPanier())
-										{
-										   $nbArticles=count($_SESSION['panier']['libelleProduit']);
-										   if ($nbArticles <= 0)
-										   echo "<a href='#'>(0 article)</a> dans votre panier (<a href='#'>€0.00</a>)";
-										   else
-										   {
-											  for ($i=0 ;$i < $nbArticles ; $i++)
-											  {
-												echo "<a href='#'>".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."(article)</a> dans votre panier (<a href='#'>€".MontantGlobal()."</a>)";
-											  }
-
-											 
-										   }
+										if ($infosPanier != null) {
+											?>
+												<a href='panier.php'>(<?=$infosPanier['nbProduits'];?> articles)</a> dans votre panier (<a href='#'>€<?=$infosPanier['montantTotal'];?></a>)
+											<?php
+										} else {
+											?>
+												<a href='panier.php'>(0 article)</a> dans votre panier (<a href='#'>€0.00</a>)
+											<?php
 										}
-										*/
-										?>
-								
+									?>
                                 </div>
                             </div>
 							<!--*****************************************************fin de bloc du panier*****************************************************-->

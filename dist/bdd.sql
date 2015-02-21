@@ -56,23 +56,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `projetweb`.`panier`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `projetweb`.`panier` ;
-
-CREATE TABLE IF NOT EXISTS `projetweb`.`panier` (
-  `id_panier` INT NOT NULL AUTO_INCREMENT,
-  `id_user` INT NOT NULL,
-  PRIMARY KEY (`id_panier`, `id_user`),
-  CONSTRAINT `fk_panier_user1`
-    FOREIGN KEY (`id_user`)
-    REFERENCES `projetweb`.`user` (`id_user`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `projetweb`.`article`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `projetweb`.`article` ;
@@ -134,18 +117,18 @@ DROP TABLE IF EXISTS `projetweb`.`ligne_panier` ;
 
 CREATE TABLE IF NOT EXISTS `projetweb`.`ligne_panier` (
   `id_article` INT NOT NULL,
-  `id_panier` INT NOT NULL,
+  `id_user` INT NOT NULL,
   `quantite` INT NOT NULL DEFAULT 1,
-  PRIMARY KEY (`id_article`, `id_panier`),
-  INDEX `fk_ligne_panier_panier1_idx` (`id_panier` ASC),
+  PRIMARY KEY (`id_article`, `id_user`),
+  INDEX `fk_ligne_panier_user_idx` (`id_user` ASC),
   CONSTRAINT `fk_ligne_panier_article1`
     FOREIGN KEY (`id_article`)
     REFERENCES `projetweb`.`article` (`id_article`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_ligne_panier_panier1`
-    FOREIGN KEY (`id_panier`)
-    REFERENCES `projetweb`.`panier` (`id_panier`)
+  CONSTRAINT `fk_ligne_panier_user`
+    FOREIGN KEY (`id_user`)
+    REFERENCES `projetweb`.`user` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
