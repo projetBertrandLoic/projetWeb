@@ -19,7 +19,7 @@
                             <h1>Nos desserts</h1>
                             <p>Nulla id iaculis ligula. Vivamus mattis quam eget urna tincidunt consequat. Nullam 
                             <br><br>consectetur tempor neque vitae iaculis. Aliquam erat volutpat.</p>
-                            <a href="single-post.html">Commander</a>
+                            <a href="menu.php">Commander</a>
                         </div>
                       <img src="images/slide2.jpg" alt="" />
                     </li>
@@ -28,7 +28,7 @@
                             <h1>Nos Boissons</h1>
                             <p>Maecenas fermentum est ut elementum vulputate. Ut vel consequat urna. Ut aliquet 
                             <br><br>ornare massa, quis dapibus quam condimentum id.</p>
-                            <a href="single-post.html">J'ai soif</a>
+                            <a href="menu.php">J'ai soif</a>
                         </div>
                       <img src="images/slide3.jpg" alt="" />
                     </li>

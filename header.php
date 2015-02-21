@@ -49,7 +49,7 @@ ini_set('display_errors', 'On');
 								
 								<!--mon panier chercher dans la bd les produits -->
                                     <i class="fa fa-shopping-cart"></i>
-									<a href='#'>(0 article)</a> dans votre panier (<a href='#'>€0.00</a>)
+									<a href='panier.php'>(0 article)</a> dans votre panier (<a href='#'>€0.00</a>)
 									<?php
 										/*
 										include("fonctions-panier.php");
