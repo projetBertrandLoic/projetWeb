@@ -130,7 +130,7 @@
 										<div class='blog-thumb'>
 											<?php 
 											if ($image != null) {
-												echo '<img src="data:'.$image['type'].';base64,'.base64_encode($image['blob']).'"/>';
+												echo '<img src="data:'.$image['type'].';base64,'.base64_encode($image['blob']).'" />';
 											} else {
 												?>
 												<img alt="" src="images/blogpost6.jpg">											
@@ -152,102 +152,7 @@
 								<?php
 							}
 						?>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="images/blogpost1.jpg" alt="" />
-                                </div>
-                                <div class="blog-content">
-                                    <div class="content-show">
-                                        <h4><a href="single-post.html">Le Sandwich poulet royal</a></h4>
-                                        <span>29 Sep 2015</span>
-                                    </div>
-                                    <div class="content-hide">
-                                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="images/blogpost2.jpg" alt="" />
-                                </div>
-                                <div class="blog-content">
-                                    <div class="content-show">
-                                        <h4><a href="single-post.html">Les meilleur des gouts</a></h4>
-                                        <span>23 Sep 2015</span>
-                                    </div>
-                                    <div class="content-hide">
-                                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="images/blogpost3.jpg" alt="" />
-                                </div>
-                                <div class="blog-content">
-                                    <div class="content-show">
-                                        <h4><a href="single-post.html">La Pizza du chef </a></h4>
-                                        <span>14 Sep 2084</span>
-                                    </div>
-                                    <div class="content-hide">
-                                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="images/blogpost4.jpg" alt="" />
-                                </div>
-                                <div class="blog-content">
-                                    <div class="content-show">
-                                        <h4><a href="single-post.html">ALimentation equilibré</a></h4>
-                                        <span>25 Aug 2084</span>
-                                    </div>
-                                    <div class="content-hide">
-                                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="images/blogpost5.jpg" alt="" />
-                                </div>
-                                <div class="blog-content">
-                                    <div class="content-show">
-                                        <h4><a href="single-post.html">Nos ptit' dej</a></h4>
-                                        <span>17 Aug 2015</span>
-                                    </div>
-                                    <div class="content-hide">
-                                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="images/blogpost6.jpg" alt="" />
-                                </div>
-                                <div class="blog-content">
-                                    <div class="content-show">
-                                        <h4><a href="single-post.html">Jus de fruit frais</a></h4>
-                                        <span>12 Aug 2015</span>
-                                    </div>
-                                    <div class="content-hide">
-                                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    
                     </div>
                 </div>
             </div>
