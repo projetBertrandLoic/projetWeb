@@ -10,7 +10,7 @@
                             <h1>Nos menus</h1>
                             <p>Donec justo dui, semper vitae aliquam euzali, ornare pretium enim. Maecenas molestie diam
                             <br><br>eget tellus luctus fermentum.</p>
-                            <a href="produits.php">Commander</a>
+                            <a href="menu.php">Commander</a>
                         </div>
                       <img src="images/slide1.jpg" alt="" />
                     </li>
@@ -117,7 +117,7 @@
 							include_once ("fonctions-article.php");
 							
 							// Alimentation auto de la base à chaque refresh, à virer
-							ajouterArticleCoupDeCoeur("Hello world", "Ceci est un article Hello World", 9999.99, true);
+							//ajouterArticleCoupDeCoeur("Hello world", "Ceci est un article Hello World", 9999.99, true);
 							// Fin alim
 							
 							$coupsDeCoeur = getCoupsDeCoeur();
@@ -140,7 +140,7 @@
 										</div>
 										<div class='blog-content'>
 											<div class='content-show'>
-												<h4><a href='single-post.html'> <?=$item['titre']?></a></h4>
+												<h4><a href='article.php'> <?=$item['titre']?></a></h4>
 												<span> <?=$item['date_ajout']?> </span>
 											</div>
 											<div class='content-hide'>
@@ -281,7 +281,7 @@
 												echo "<li>";
 												echo "<div class='testimonails-content'>";
 												echo"<p>".$tab['texte']."</p>";
-												echo"<h6>".$tab['nomClient']."</h6>";
+												echo"<h6>".$tab['id_user']."</h6>";
 												echo "</div>";
 												echo "</li>";
 											}
