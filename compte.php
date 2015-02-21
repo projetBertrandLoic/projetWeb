@@ -1,5 +1,5 @@
-<?php include_once("header.php"); ?>   
-	 
+<?php include_once("header.php");?>   
+	
 <div class="" id="loginModal">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -8,7 +8,7 @@
 	<div class="modal-body">
 		<div class="well">
 			<ul class="nav nav-tabs">
-				<li class="active"><a href="#login" data-toggle="tab">Nom</a></li>
+				<li class="active"><a href="#login" data-toggle="tab">Se Connecter</a></li>
 				<li><a href="#create" data-toggle="tab">Creer un compte</a></li>
 			</ul>
 			<div id="myTabContent" class="tab-content">
@@ -45,24 +45,24 @@
 					</form>                
 				</div>
 				<div class="tab-pane fade" id="create">
-					<form id="tab">
+					<form id="tab" method="POST" id="Inscrire" action="verif_compte.php">
 						<label><h4>Pseudo</h4></label>
-						<input type="text" value="" class="input-xlarge">
+						<input type="text" name="pseud" value="" class="input-xlarge">
 						<label><h4>Mot de passe</h4></label>
-						<input type="text" value="" class="input-xlarge">
+						<input type="text" name="mdp" value="" class="input-xlarge">
 						<label><h4>Prenom</h4></label>
-						<input type="text" value="" class="input-xlarge">
+						<input type="text" name="first" value="" class="input-xlarge">
 						<label><h4>Nom de famille</h4></label>
-						<input type="text" value="" class="input-xlarge">
+						<input type="text" name="last" value="" class="input-xlarge">
 						<label><h4>Email</h4></label>
-						<input type="text" value="" class="input-xlarge">
+						<input type="text" name="mail" value="" class="input-xlarge">
 						<label><h4>Addresse</h4></label>
 						</br>
-						<textarea value="" rows="3" class="input-xlarge">
+						<textarea value="adresse" rows="3" class="input-xlarge">
 						</textarea>
 						
 						<div>
-							<button class="btn btn-primary">Creer un compte</button>
+							<button class="btn btn-primary" type="submit">Creer un compte</button>
 						</div>
 					</form>
 				</div>
