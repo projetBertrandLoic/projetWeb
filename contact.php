@@ -13,7 +13,6 @@
                 </div>
             </div>
 
-
             <div id="product-post">
                 <div class="container">
                     <div class="row">

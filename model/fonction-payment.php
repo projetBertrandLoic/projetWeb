@@ -1,97 +1,29 @@
 <?php
 
-/************************************************************************************************************
- * This function has been placed in the public domain as detailed at:                                       *
- * http://www.braemoor.co.uk/software/index.shtml                                                           *
- *                                                                                                          *
- * "You are welcome to download and use any of this software, but please note that:                         *
- * All software is provided as freeware for personal or commercial use without obligation by either party.  *
- * The author will not accept responsibility for any problems that may be incurred by use of this software, *
- * although any errors reported will be corrected as soon as possible.                                      *
- * Re-distribution of this software is NOT permitted without explicit permission."                          *
- ************************************************************************************************************
-
-
-==============================================================================*/
-
 
 function checkCreditCard ($cardnumber, $cardname, &$errornumber, &$errortext) {
 
-  // Define the cards we support. You may add additional card types.
-  
-  //  Name:      As in the selection box of the form - must be same as user's
-  //  Length:    List of possible valid lengths of the card number for the card
-  //  prefixes:  List of possible prefixes for the card
-  //  checkdigit Boolean to say whether there is a check digit
-  
-  // Don't forget - all but the last array definition needs a comma separator!
+ 
   
   $cards = array (  array ('name' => 'American Express', 
                           'length' => '15', 
                           'prefixes' => '34,37',
                           'checkdigit' => true
                          ),
-                   array ('name' => 'Diners Club Carte Blanche', 
-                          'length' => '14', 
-                          'prefixes' => '300,301,302,303,304,305',
-                          'checkdigit' => true
-                         ),
-                   array ('name' => 'Diners Club', 
-                          'length' => '14,16',
-                          'prefixes' => '36,38,54,55',
-                          'checkdigit' => true
-                         ),
-                   array ('name' => 'Discover', 
-                          'length' => '16', 
-                          'prefixes' => '6011,622,64,65',
-                          'checkdigit' => true
-                         ),
-                   array ('name' => 'Diners Club Enroute', 
-                          'length' => '15', 
-                          'prefixes' => '2014,2149',
-                          'checkdigit' => true
-                         ),
-                   array ('name' => 'JCB', 
-                          'length' => '16', 
-                          'prefixes' => '35',
-                          'checkdigit' => true
-                         ),
-                   array ('name' => 'Maestro', 
-                          'length' => '12,13,14,15,16,18,19', 
-                          'prefixes' => '5018,5020,5038,6304,6759,6761,6762,6763',
-                          'checkdigit' => true
-                         ),
+                   
                    array ('name' => 'MasterCard', 
                           'length' => '16', 
                           'prefixes' => '51,52,53,54,55',
                           'checkdigit' => true
                          ),
-                   array ('name' => 'Solo', 
-                          'length' => '16,18,19', 
-                          'prefixes' => '6334,6767',
-                          'checkdigit' => true
-                         ),
-                   array ('name' => 'Switch', 
-                          'length' => '16,18,19', 
-                          'prefixes' => '4903,4905,4911,4936,564182,633110,6333,6759',
-                          'checkdigit' => true
-                         ),
+                  
                    array ('name' => 'VISA', 
                           'length' => '16', 
                           'prefixes' => '4',
                           'checkdigit' => true
                          ),
-                   array ('name' => 'VISA Electron', 
-                          'length' => '16', 
-                          'prefixes' => '417500,4917,4913,4508,4844',
-                          'checkdigit' => true
-                         ),
-                   array ('name' => 'LaserCard', 
-                          'length' => '16,17,18,19', 
-                          'prefixes' => '6304,6706,6771,6709',
-                          'checkdigit' => true
-                         )
-                );
+                  
+                     );
 
   $ccErrorNo = 0;
 

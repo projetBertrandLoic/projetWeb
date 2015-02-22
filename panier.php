@@ -113,6 +113,7 @@ if (!$erreur){
 				</table>
 				<input type="submit" value="Rafraichir"/>
 				<input type="hidden" name="action" value="refresh"/>
+				<a class="btn btn-default" href="paiement.php" role="button">Valider</a>
 			</form>
 		</div>
 	</div>

@@ -45,13 +45,16 @@
               </div>
             </div>
            
-
+			<?php
+			$idUserConnected = 1;
+			$infosPanier = getInfosPanier($idUserConnected);
+			?>
 
 		   <div class='form-row'>
               <div class='col-md-12'>
                 <div class='form-control total btn btn-info'>
-                  Total:
-                  <span class='amount'>€150</span>
+                  Total € : 
+                  <span class='amount'><?=$infosPanier['montantTotal']?></span>
                 </div>
               </div>
             </div>

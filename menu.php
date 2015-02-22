@@ -86,7 +86,7 @@
 											?>
 											<div class="hover">
 												<div class="hover-iner">
-													<a class="fancybox" href=""><?php echo "<img src="data:'.$image['type'].';base64,'.base64_encode($image['blob']).'" />";?></a>
+													<a class="fancybox" href=""><?php echo '<img src="data:'.$image['type'].';base64,'.base64_encode($image['blob']).'" />'?></a>
 
 												</div>
 											</div>
