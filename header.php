@@ -90,13 +90,7 @@ ini_set('display_errors', 'On');
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="search-box">  
-                                    <form name="search_form" method="get" class="search_form">
-                                        <input id="search" type="text" />
-                                        <input type="submit" id="search-button" />
-                                    </form>
-                                </div>
+
                             </div>
                         </div>
                     </div>
