@@ -487,6 +487,7 @@ p {
 
 .image-post {
   overflow: hidden;
+  text-align: center;
 }
 
 .product-title h3 {

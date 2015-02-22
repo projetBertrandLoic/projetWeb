@@ -59,6 +59,53 @@
 							}
 						?>
 						-->
+						
+												<?php 
+							include_once ("model/fonctions-article.php");
+							
+							// Alimentation auto de la base à chaque refresh, à virer
+							//ajouterArticleCoupDeCoeur("Hello world", "Ceci est un article Hello World", 9999.99, true);
+							// Fin alim
+							
+							$articles = getArticles();
+						
+							foreach ($articles as $item){
+								$image = getFirstImageForArticle($item['id_article']);
+								?>
+								<div class="col-md-3 col-sm-6 mix portfolio-item Pizza">       
+									<div class="portfolio-wrapper">                
+										<div class="portfolio-thumb">
+											<?php 
+											if ($image != null) {
+												echo '<img src="data:'.$image['type'].';base64,'.base64_encode($image['blob']).'" />';
+											} else {
+												?>
+												<img alt="" src="images/blogpost6.jpg">											
+												<?php
+											}
+											?>
+											<div class="hover">
+												<div class="hover-iner">
+													<a class="fancybox" href=""><?php echo "<img src="data:'.$image['type'].';base64,'.base64_encode($image['blob']).'" />";?></a>
+
+												</div>
+											</div>
+										</div>  
+										<div class="label-text">
+											<h3><a href="article.php?id=<?=$item['id_article']?>"><?=$item['titre']?></a></h3>
+											<span class="text-category"><?=$item['prix']?>€</span>
+											<a href= "panier.php?action=ajout&l=<?=$item['id_article']?>&q=1"<button class="btn btn-primary btn-sm">Ajouter</button><a>
+									   </div>
+									</div>          
+								</div>
+								<?php
+							}
+						?>
+						
+						
+						
+						
+						
 				
                     <div class="row" id="Container">
                         <div class="col-md-3 col-sm-6 mix portfolio-item Pizza">       

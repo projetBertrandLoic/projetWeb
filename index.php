@@ -176,22 +176,22 @@
                         <div class="col-md-8 col-md-offset-2">
                             <div class="testimonails-slider">
                               <ul class="slides">
-                                
-                                   
-										<?php 
-										include_once ("model/connect.php");
-										$comment=mysqli_query($co,"select texte,id_user from avis_client");
+								<?php 
+								include_once ("model/fonctions-user.php");
+								$comments = getAvis();
+							
+								foreach ($comments as $comment){
+									echo "<li>";
+									echo "<div class='testimonails-content'>";
+									echo"<p>".$comment['texte']."</p>";
+									echo"<h6>".$comment['prenom']." ".$comment['nom'].", ".$comment['date']."</h6>";
+									echo "</div>";
+									echo "</li>";
+									?>
 									
-											while ($tab = mysqli_fetch_assoc($comment)){
-												echo "<li>";
-												echo "<div class='testimonails-content'>";
-												echo"<p>".$tab['texte']."</p>";
-												echo"<h6>".$tab['id_user']."</h6>";
-												echo "</div>";
-												echo "</li>";
-											}
-										?>
-                                    
+									<?php
+								}
+								?> 
                               </ul>
                             </div>
                         </div>

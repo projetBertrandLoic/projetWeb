@@ -3,7 +3,7 @@
 include_once("model/fonctions-panier.php");
 
 // TODO : Remplacer l'ID par celui de l'utilisateur connecté
-$idUserConnected = 2;
+$idUserConnected = 1;
 
 $erreur = false;
 

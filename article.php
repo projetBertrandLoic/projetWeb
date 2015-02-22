@@ -15,8 +15,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="product-item col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-8">  
+ 
                                                 <div class="image">
                                                     <div class="image-post">
                                                         <img src="images/single-post.jpg" alt="">
@@ -37,15 +36,7 @@
                                                 <div class="divide-line">
                                                 <img src="images/div-line.png" alt="" />
                                                 </div>
-												
-										
-                                        </div>
-                                        <div class="col-md-3 col-md-offset-1">
-                                            <div class="side-bar">
-                                           
-                                            </div>
-                                        </div>     
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
