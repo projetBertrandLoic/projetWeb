@@ -50,6 +50,7 @@
                                 echo "<div class='content-show'>";
                                 echo "<h4><a href='single-post.html'>".$tab['img_titre']."</a></h4>";
                                 echo "<span>".$tab['img_date']."</span>";
+								echo "<button class='btn btn-primary btn-sm'>Ajouter</button>";
                                 echo "</div>";
                                 echo "<div class='content-hide'>";
                                 echo "<p>".$tab['img_desc']."</p>";
@@ -74,7 +75,8 @@
                                 <div class="label-text">
                                     <h3><a href="article.php">Vege Pizza</a></h3>
                                     <span class="text-category">$16.00</span>
-                                </div>
+                               <button class="btn btn-primary btn-sm">Ajouter</button>
+							   </div>
                             </div>          
                         </div>
                         <div class="col-md-3 col-sm-6 mix portfolio-item ginger">       
@@ -91,6 +93,7 @@
                                 <div class="label-text">
                                     <h3><a href="article.php">Ginger Tea</a></h3>
                                     <span class="text-category">$24.00</span>
+									<button class="btn btn-primary btn-sm">Ajouter</button>
                                 </div>
                             </div>          
                         </div>
@@ -108,6 +111,7 @@
                                 <div class="label-text">
                                     <h3><a href="article.php">Vege Green Salad</a></h3>
                                     <span class="text-category">$12.00</span>
+									<button class="btn btn-primary btn-sm">Ajouter</button>
                                 </div>
                             </div>          
                         </div>
@@ -125,6 +129,7 @@
                                 <div class="label-text">
                                     <h3><a href="article.php">Herbal Hot Tea</a></h3>
                                     <span class="text-category">$8.00</span>
+									<button class="btn btn-primary btn-sm">Ajouter</button>
                                 </div>
                             </div>          
                         </div>

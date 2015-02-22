@@ -15,7 +15,7 @@
 		
 				<h3>Saississez un commentaire pour le coup de coeur</h3>
 				<textarea class="form-control" rows="3"></textarea>
-				<input type="submit" value="Envoyer" />
+				<button type="submit" class="btn btn-default">Envoyer</button>
 			
 		</form>
 	<?php include_once("footer.php") ?>
