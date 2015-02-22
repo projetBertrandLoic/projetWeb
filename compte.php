@@ -45,9 +45,11 @@
 					</form>                
 				</div>
 				<div class="tab-pane fade" id="create">
+
 					<form id="tab" method="POST" id="Inscrire" action="verif_compte.php">
+						
 						<label><h4>Pseudo</h4></label>
-						<input type="text" name="pseud" value="" class="input-xlarge">
+						<input type="text" name="pseud" value="" class="input-large">
 						<label><h4>Mot de passe</h4></label>
 						<input type="password" name="mdp" value="" size= "100" MAXLENGTH="8" class="input-xlarge">
 						<span class=""> 8 caractéres maximum</span>
@@ -58,11 +60,10 @@
 						<input type="text" name="last" value="" class="input-xlarge">
 						<label><h4>Email</h4></label>
 						<input type="text" name="mail" value="" class="input-xlarge">
-						<label><h4>Addresse</h4></label>
+						<label><h4>Adresse</h4></label>
 						</br>
-						<textarea value="adresse" rows="3" name="adresse" class="input-xlarge">
+						<textarea value="adresse" rows="2" name="adresse" class="input-xlarge">
 						</textarea> 
-						
 						<div>
 							<button class="btn btn-primary" type="submit">Creer un compte</button>
 						</div>
