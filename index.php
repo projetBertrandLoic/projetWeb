@@ -30,7 +30,7 @@
                             <br><br>ornare massa, quis dapibus quam condimentum id.</p>
                             <a href="menu.php">J'ai soif</a>
                         </div>
-                      <img src="images/slide3.jpg" alt="" />
+                      <img src="images/pep.jpg" alt="" />
                     </li>
                   </ul>
                 </div>
