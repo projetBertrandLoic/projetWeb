@@ -54,13 +54,14 @@
                                                 </form>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        
+										<div class="col-md-4">
                                             <div class="info">
-                                                <p>Sed dignissim, diam id molestie faucibus, purus nisl pretium quam, in pulvinar velit massa id elit. </p>
+                                                <p>N'hésitez pas à nous contacter au sujet d'un produit, d'une commande ou pour toutes autres informations complementaires </p>
                                                 <ul>
-                                                    <li><i class="fa fa-phone"></i>010-020-0340</li>
-                                                    <li><i class="fa fa-globe"></i>123 Dagon Studio, Yakin Street, Digital Estate</li>
-                                                    <li><i class="fa fa-envelope"></i><a href="#">info@company.com</a></li>
+                                                    <li><i class="fa fa-phone"></i>01 46 46 00 01</li>
+                                                    <li><i class="fa fa-globe"></i>Plateau du Moulon, Rue Noetzlin, 91400 Orsay</li>
+                                                    <li><i class="fa fa-envelope"></i><a href="#">RestoRap.com</a></li>
                                                 </ul>
                                             </div>
                                         </div>     
