@@ -49,7 +49,9 @@
 						<label><h4>Pseudo</h4></label>
 						<input type="text" name="pseud" value="" class="input-xlarge">
 						<label><h4>Mot de passe</h4></label>
-						<input type="text" name="mdp" value="" class="input-xlarge">
+						<input type="password" name="mdp" value="" size= "100" MAXLENGTH="8" class="input-xlarge">
+						<span class=""> 8 caractéres maximum</span>
+					</br>
 						<label><h4>Prenom</h4></label>
 						<input type="text" name="first" value="" class="input-xlarge">
 						<label><h4>Nom de famille</h4></label>
@@ -58,8 +60,8 @@
 						<input type="text" name="mail" value="" class="input-xlarge">
 						<label><h4>Addresse</h4></label>
 						</br>
-						<textarea value="adresse" rows="3" class="input-xlarge">
-						</textarea>
+						<textarea value="adresse" rows="3" name="adresse" class="input-xlarge">
+						</textarea> 
 						
 						<div>
 							<button class="btn btn-primary" type="submit">Creer un compte</button>

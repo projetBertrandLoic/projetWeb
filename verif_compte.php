@@ -32,7 +32,12 @@ if (!empty($_POST['mail'])) {
 	echo "Vous n'avez pas entré de mail !";
 	echo '</br>';
 }
-
+if (!empty($_POST['adresse'])) {
+	$adresse = $_POST['adresse'];
+}else{
+	echo "Vous n'avez pas entré d'adresse !";
+	echo '</br>';
+}
 
 	
 	
@@ -46,10 +51,11 @@ if (!empty($_POST['mail'])) {
 	if (mysqli_num_rows ($request) == 1){
 		echo "<script type='text/javascript'> alert('Le couple login et mot de passe existe deja') </script>";
 		//header("Location:compte.php");
-	}else{
-		$resultat = mysqli_query($co, "INSERT INTO user VALUES ('','$login','$mdp','','$nom','$prenom','$email')") or die ("insertion de l'utilisateur en base impossible");
+	}
+	if ((!empty($_POST['pseud'])) && (!empty($_POST['mdp'])) && (!empty($_POST['first'])) && (!empty($_POST['last'])) && (!empty($_POST['mail'])) &&(!empty($_POST['adresse']))){
+		$resultat = mysqli_query($co, "INSERT INTO user VALUES ('','$login','$mdp','','$nom','$prenom','$email','$adresse')") or die ("insertion de l'utilisateur en base impossible");
 		$id = mysqli_insert_id ($co);
-	
+		echo "Votre inscription à bien été realisée, Bienvenue parmis nous !";
 	}
 	
 include_once("footer.php");?>
