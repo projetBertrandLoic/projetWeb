@@ -1,4 +1,9 @@
-<?php include_once("header.php");//viderPanier();// ?>
+<?php include_once("header.php");
+
+
+
+viderPanier(1)
+//viderPanier();// ?>
 
 
 
