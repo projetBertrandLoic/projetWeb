@@ -25,7 +25,7 @@ $numeroCarte = (isset($_POST['numeroCarte']));
 		  
 		  <form action="paiement.php" class="require-validation" id="payment-form" method="post">
 
-				<!-- acune verif sur le nom de la carte -->
+				<!-- acune verif actuellement sur le nom de la carte -->
 			   <div class='form-row'>
 				  <div class='col-xs-12 form-group required'>
 					<label class='control-label'>Nom sur la carte</label>
