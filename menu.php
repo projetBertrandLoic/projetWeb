@@ -122,8 +122,8 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="article.php">Chocolate Cake</a></h3>
-                                    <span class="text-category">$14.00</span>
+                                    <h3><a href="article.php">Burger D'la Mort</a></h3>
+                                    <span class="text-category">14.00$</span>
                                 </div>
                             </div>          
                         </div>
@@ -139,8 +139,8 @@
                                     </div>
                                 </div>  
                                 <div class="label-text">
-                                    <h3><a href="article.php">Pizza Taste</a></h3>
-                                    <span class="text-category">$15.00</span>
+                                    <h3><a href="article.php">Pizza Chicken Shit</a></h3>
+                                    <span class="text-category">15.00$</span>
                                 </div>
                             </div>          
                         </div>

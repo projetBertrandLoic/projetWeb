@@ -2,18 +2,13 @@
 
 
 
-viderPanier(1)
-//viderPanier();// ?>
-
-
-
-
-<h1>merci!!!!</h1>
+viderPanier(1);
 
 
 
 
 
+echo " Merci ".$_SESSION['nomUser'];
 
 
 
@@ -25,4 +20,9 @@ viderPanier(1)
 
 
 
-<?php include_once("footer.php") ?>
+
+
+
+
+
+ include_once("footer.php") ?>

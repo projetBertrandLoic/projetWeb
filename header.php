@@ -56,6 +56,7 @@ ini_set('display_errors', 'On');
 									<?php
 										include("model/fonctions-panier.php");
 										// TODO : Remplacer avec l'ID de l'utilisateur connecté
+										
 										$idUserConnected = 1;
 										$infosPanier = getInfosPanier($idUserConnected);
 										

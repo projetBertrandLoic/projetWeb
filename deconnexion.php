@@ -1,5 +1,8 @@
 <?php
-		include("header.php");
+		include('header.php');
+		
+		
+		
 		session_destroy();
 		
 		?><span class="label label-success">Vous etes bien deconnecté</span>

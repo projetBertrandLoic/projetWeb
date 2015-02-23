@@ -6,6 +6,9 @@ if ((!empty($_POST["login"])) && (!empty($_POST["password"]))){
 	$login = $_POST["login"];
 	$passwd = $_POST["password"];
 	
+	// verification des caracteres speciaux
+	
+	$passwd = mysqli_real_escape_string($co, $passwd); 
 	
 	
 	$resultat = mysqli_query($co,"SELECT * FROM user WHERE login='$login' AND '$passwd'=password") or die("erreur requete client");
