@@ -1,6 +1,20 @@
-<?php include_once("header.php");?>
-<?php include_once("model/fonction-payment.php");?>
- 
+<?php 
+include_once("header.php");
+include_once("model/fonction-payment.php");
+
+$numeroCarte = (isset($_POST['numeroCarte']));
+
+	if($numeroCarte !== null)
+{
+	$numError = "";
+	$textError = "";
+	$carteValide = verifCarte ($numeroCarte, $numError, $textError);
+	if ($carteValide) {
+		header("merci.php");
+	}
+}
+
+?>
  
 <div class="container">
     <div class='row'>
@@ -9,16 +23,9 @@
           <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
           
 		  
-		  <form accept-charset="UTF-8" action="merci.php" class="require-validation" data-cc-on-file="false" 
-				data-stripe-publishable-key="pk_bQQaTxnaZlzv4FnnuZ28LFHccVSaj" id="payment-form" 
-				method="post" onsubmit="return verifCarte();">
-		  
-			  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" />
-				<input name="_method" type="hidden" value="PUT" /><input name="authenticity_token" 
-				type="hidden" value="qLZ9cScer7ZxqulsUWazw4x3cSEzv899SP/7ThPCOV8=" />
-			  </div>
-           
-					<!-- acune verif sur le nom de la carte -->
+		  <form action="paiement.php" class="require-validation" id="payment-form" method="post">
+
+				<!-- acune verif sur le nom de la carte -->
 			   <div class='form-row'>
 				  <div class='col-xs-12 form-group required'>
 					<label class='control-label'>Nom sur la carte</label>
@@ -30,7 +37,7 @@
 			   <div class='form-row'>
 				  <div class='col-xs-12 form-group card required'>
 					<label class='control-label'>Numero de carte</label>
-					<input autocomplete='off' class='form-control card-number' size='20' type='text'>
+					<input autocomplete='off' class='form-control card-number' size='20' type='text' name="numeroCarte">
 				  </div>
 				</div>
 				<div class='form-row'>
@@ -67,13 +74,7 @@
 					<button class='form-control btn btn-primary submit-button' type='submit'>Payer </button>
 				  </div>
 				</div>
-				<div class='form-row'>
-				  <div class='col-md-12 error form-group hide'>
-					<div class='alert-danger alert'>
-					  Corrigez les erreurs et recommencez
-					</div>
-				  </div>
-				</div>
+				
           </form>
         </div>
         <div class='col-md-4'></div>

@@ -8,7 +8,7 @@ viderPanier(1);
 
 
 
-echo " Merci ".$_SESSION['nomUser'];
+echo " Merci ";
 
 
 
