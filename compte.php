@@ -13,7 +13,7 @@
 			</ul>
 			<div id="myTabContent" class="tab-content">
 				<div class="tab-pane active in" id="login">
-					<form class="form-horizontal" action='' method="POST">
+					<form class="form-horizontal" action='verif-user.php' method="POST">
 						<fieldset>
 							<div id="legend">
 								<legend class="">Se connecter</legend>
@@ -22,7 +22,7 @@
 								<!-- Username -->
 								<label class="control-label"  for="username">Pseudo</label>
 								<div class="controls">
-									<input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+									<input type="text" id="username" name="login" placeholder="" class="input-xlarge">
 								</div>
 							</div>
 							
@@ -38,7 +38,7 @@
 							<div class="control-group">
 								<!-- Button -->
 								<div class="controls">
-									<button class="btn btn-success">Login</button>
+									<button class="btn btn-success"type="submit">Login</button>
 								</div>
 							</div>
 						</fieldset>
@@ -48,22 +48,22 @@
 
 					<form id="tab" method="POST" id="Inscrire" action="verif_compte.php">
 						
+					
 						<label><h4>Pseudo</h4></label>
-						<input type="text" name="pseud" value="" class="input-large">
+						<input type="text" name="pseud" value="<?php if(isset ($_SESSION['pseudo'])){echo $_SESSION['pseudo'];} ?>" class="input-large">
 						<label><h4>Mot de passe</h4></label>
-						<input type="password" name="mdp" value="" size= "100" MAXLENGTH="8" class="input-xlarge">
+						<input type="password" name="mdp" value="<?php if(isset ($_SESSION['mdp'])){echo $_SESSION['mdp'];} ?>" size= "100" MAXLENGTH="8" class="input-xlarge">
 						<span class=""> 8 caractéres maximum</span>
-					</br>
-						<label><h4>Prenom</h4></label>
-						<input type="text" name="first" value="" class="input-xlarge">
-						<label><h4>Nom de famille</h4></label>
-						<input type="text" name="last" value="" class="input-xlarge">
-						<label><h4>Email</h4></label>
-						<input type="text" name="mail" value="" class="input-xlarge">
-						<label><h4>Adresse</h4></label>
 						</br>
-						<textarea value="adresse" rows="2" name="adresse" class="input-xlarge">
-						</textarea> 
+						<label><h4>Prenom</h4></label>
+						<input type="text" name="first" value="<?php if(isset ($_SESSION['prenom'])){echo $_SESSION['prenom'];} ?>" class="input-xlarge">
+						<label><h4>Nom de famille</h4></label>
+						<input type="text" name="last" value="<?php if(isset ($_SESSION['nom'])){echo $_SESSION['nom'];} ?>" class="input-xlarge">
+						<label><h4>Email</h4></label>
+						<input type="text" name="mail" value="<?php if(isset ($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="input-xlarge">
+						<label><h4>Adresse</h4></label>
+						<input type="text" name="adresse" value="<?php if(isset ($_SESSION['adresse'])){echo $_SESSION['adresse'];} ?>" class="input-xlarge">
+						</br>
 						<div>
 							<button class="btn btn-primary" type="submit">Creer un compte</button>
 						</div>

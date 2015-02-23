@@ -36,8 +36,12 @@ ini_set('display_errors', 'On');
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="utilisateurs">
-                                    <a href="staff.php">Staff </a>
-                                    <a href="compte.php"> Mon compte</a>
+                                    <?php if(!isset($_SESSION['nomUser'])){
+										echo "<a href='compte.php'> Mon compte</a>";
+									}else{
+										 echo "<a href='deconnexion.php'> Deconnexion</a>";
+                                    	 echo "Bonjour, ".$_SESSION['nomUser'];
+									}?>
                                 </div>
                             </div>
 							
