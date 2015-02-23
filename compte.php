@@ -2,7 +2,15 @@
 	
 <div class="" id="loginModal">
 	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<?php 
+		$info = (isset($_POST['info'])? $_POST['info']:  (isset($_GET['info'])? $_GET['info']:null )) ;
+		if($info !== null)
+		{ 
+			?>
+			<h3 class="bg-warning">Veuillez vous connecter pour poursuivre votre navigation sur le site.</h3>
+			<?php
+		}
+		?>
 		<h3>Avez vous un compte ?</h3>
 	</div>
 	<div class="modal-body">

@@ -55,9 +55,11 @@ ini_set('display_errors', 'On');
                                     <i class="fa fa-shopping-cart"></i>
 									<?php
 										include("model/fonctions-panier.php");
-										// TODO : Remplacer avec l'ID de l'utilisateur connecté
-										
-										$idUserConnected = 1;
+
+										$idUserConnected = 0;
+										if (isset($_SESSION['id_client']) && $_SESSION['id_client'] !== null) {
+											$idUserConnected = $_SESSION['id_client'];
+										}
 										$infosPanier = getInfosPanier($idUserConnected);
 										
 										if ($infosPanier != null) {
@@ -85,7 +87,7 @@ ini_set('display_errors', 'On');
                                     <a href="#"><img src="images/logo.png" title="LoicEtBertrand" alt="logo de loic et bertrand" ></a>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                 <div class="main-menu">
                                     <ul>
                                         <li><a href="index.php">Accueil</a></li>

@@ -2,8 +2,10 @@
 
 include_once("model/fonctions-panier.php");
 
-// TODO : Remplacer l'ID par celui de l'utilisateur connecté
-$idUserConnected = 1;
+include_once("model/redirect-if-not-logged.php");
+
+// On utilise l'ID de l'utilisateur connecté dans les traitements de la page
+$idUserConnected = $_SESSION['id_client'];
 
 $erreur = false;
 
@@ -87,7 +89,7 @@ if (!$erreur){
 							<tr>
 								<td><?=$ligne['titre'];?></td>
 								<td>
-									<input type="text" size="4" name="q[]" value="<?=$ligne['quantite'];?>"/>
+									<input type="text" size="4" name="q[]" value="<?=$ligne['quantite'];?>" class="form-control"/>
 								</td>
 								<td><?=$ligne['prix'];?>€</td>
 								<td><a href="panier.php?action=suppression&l=<?=$ligne['id_article'];?>">Supprimer</a></td>

@@ -54,9 +54,6 @@ function verifCarte ($numeroCarte, &$numeroErreur, &$texteErreur) {
 
 	  // Charger un tableau exploser la chaine de caractere pour recuperer les prefixes 
 	  $prefix = explode(',',$cartes[$i]['prefixes']);
-	  echo "Prefixes du type ".$cartes[$i]['name'].": ";
-	  echo var_dump($prefix);
-		  
 	  // maintenant on test pour voir si le prefixe match  
 	  $PrefixValid = false; 
 	  for ($j=0; $j<sizeof($prefix); $j++) {

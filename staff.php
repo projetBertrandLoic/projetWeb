@@ -1,5 +1,8 @@
-<?php include_once("header.php");   
-		include ("transfert.php");
+<?php 
+include_once("header.php");   
+include_once("model/redirect-if-not-logged.php");
+include_once ("transfert.php");
+
 		if ( isset($_FILES['fic']))
 		{
 		transfert();
@@ -36,4 +39,5 @@
 				<button type="submit" class="btn btn-default">Envoyer</button>
 			
 		</form>
-	<?php include_once("footer.php") ?>
+
+		<?php include_once("footer.php") ?>

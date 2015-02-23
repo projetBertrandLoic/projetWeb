@@ -1,18 +1,22 @@
 <?php 
 include_once("header.php");
 include_once("model/fonction-payment.php");
+include_once("model/redirect-if-not-logged.php");
 
-$numeroCarte = (isset($_POST['numeroCarte']));
+$numeroCarte = (isset($_POST['numeroCarte'])? $_POST['numeroCarte']:  (isset($_GET['numeroCarte'])? $_GET['numeroCarte']:null )) ;
 
-	if($numeroCarte !== null)
+if($numeroCarte !== null)
 {
 	$numError = "";
 	$textError = "";
 	$carteValide = verifCarte ($numeroCarte, $numError, $textError);
 	if ($carteValide) {
-		header("merci.php");
-	}
+		header("Location: merci.php");
+	} 
 }
+
+$idUserConnected = $_SESSION['id_client'];
+$infosPanier = getInfosPanier($idUserConnected);
 
 ?>
  
@@ -54,18 +58,11 @@ $numeroCarte = (isset($_POST['numeroCarte']));
 					<input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
 				  </div>
 				</div>
-           
-				
-				<?php
-				$idUserConnected = 1;
-				$infosPanier = getInfosPanier($idUserConnected);
-				?>
 
 			   <div class='form-row'>
 				  <div class='col-md-12'>
 					<div class='form-control total btn btn-info'>
-					  Total € : 
-					  <span class='amount'><?=$infosPanier['montantTotal']?></span>
+					  Total : <span class='amount'><?=$infosPanier['montantTotal']?></span>€
 					</div>
 				  </div>
 				</div>

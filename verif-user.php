@@ -21,12 +21,12 @@ if ((!empty($_POST["login"])) && (!empty($_POST["password"]))){
 		$_SESSION['login'] = $tabClient["login"];
 		$_SESSION['password'] = $tabClient["password"];
 		$_SESSION['is_admin'] = $tabClient["is_admin"];
-		$_SESSION['id_client'] = $tabClient["id_client"];
+		$_SESSION['id_client'] = $tabClient["id_user"];
 		
 		if ($tabClient["is_admin"] == 1){
-			header("Location:staff.php");
+			header("Location: staff.php");
 		}else{
-			header("Location:menu.php");	
+			header("Location: menu.php");	
 		}
 		
 	}
