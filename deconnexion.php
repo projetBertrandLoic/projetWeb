@@ -1,11 +1,6 @@
 <?php
 		include("header.php");
-		unset($_SESSION['nomUser']);
-		unset($_SESSION['login']);
-		unset($_SESSION['password']);
-		unset($_SESSION['is_admin']);
-		unset($_SESSION['id_client']);
-		
+		session_destroy();
 		
 		?><span class="label label-success">Vous etes bien deconnecté</span>
 		
