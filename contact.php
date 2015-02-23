@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="heading-section">
-                                <h2>Ecrivez nous un message</h2>
+                                <h2>Votre avis nous interesse</h2>
                                 <img src="images/under-heading.png" alt="" >
                             </div>
                         </div>
