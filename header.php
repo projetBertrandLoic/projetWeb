@@ -82,7 +82,7 @@ ini_set('display_errors', 'On');
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="logo">
-                                    <a href="#"><img src="images/logo.png" title="Grill" alt="logo de loic et bertrand" ></a>
+                                    <a href="#"><img src="images/logo.png" title="LoicEtBertrand" alt="logo de loic et bertrand" ></a>
                                 </div>
                             </div>
                             <div class="col-md-6">

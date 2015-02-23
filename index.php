@@ -59,7 +59,7 @@
                                     <i class="fa fa-pencil"></i>
                                 </div>
                                 <h4>Passez une commande</h4>
-                                <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
+                                <p>Des recettes originales de burger sont proposées, à base de viande pur bœuf, poulet ou poisson pané. Avec la livraison à domicile gratuite, profitez-en sans attendre. </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -68,7 +68,7 @@
                                     <i class="fa fa-bullhorn"></i>
                                 </div>
                                 <h4>Les coups de coeur</h4>
-                                <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
+                                <p>Chaques semaines nous vous proposons une selections particuliere de nos produits sur cette page. Laissez vous tenter par les coup de coeur du chef</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -77,7 +77,7 @@
                                     <i class="fa fa-bell"></i>
                                 </div>
                                 <h4>Pret a vous servir</h4>
-                                <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
+                                <p>Nous livrons a domicile, mais nous avons aussi de nombreuses tables et des serveurs si vous souhaitez profiter de la vue du plateau du moulon.</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -86,7 +86,7 @@
                                     <i class="fa fa-heart"></i>
                                 </div>
                                 <h4>Nos affichons la satisfaction client</h4>
-                                <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
+                                <p>Vous nous aimez, ou vous avez un commentaire a faire. N'hesitez pas ! Nous affichons en toute transparence ce que vous pensez de nous.</p>
                             </div>
                         </div>
                     </div>
