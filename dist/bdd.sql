@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `projetweb`.`user` (
   `nom` VARCHAR(200) NOT NULL,
   `prenom` VARCHAR(200) NOT NULL,
   `mail` VARCHAR(300) NOT NULL,
+  `adresse` VARCHAR(300) NOT NULL,
   PRIMARY KEY (`id_user`))
 ENGINE = InnoDB;
 
