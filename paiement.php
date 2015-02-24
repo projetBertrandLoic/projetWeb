@@ -4,17 +4,18 @@ include_once("model/fonction-payment.php");
 include_once("model/redirect-if-not-logged.php");
 
 $numeroCarte = (isset($_POST['numeroCarte'])? $_POST['numeroCarte']:  (isset($_GET['numeroCarte'])? $_GET['numeroCarte']:null )) ;
+/*$year=(preg_match("#^2{1}[0-9]{3}$#",$_POST['year']));*/
 
 if($numeroCarte !== null)
 {
 	$numError = "";
 	$textError = "";
+	
 	$carteValide = verifCarte ($numeroCarte, $numError, $textError);
 	if ($carteValide) {
 		header("Location: merci.php");
 	} 
 }
-
 $idUserConnected = $_SESSION['id_client'];
 $infosPanier = getInfosPanier($idUserConnected);
 
@@ -55,7 +56,7 @@ $infosPanier = getInfosPanier($idUserConnected);
 				  </div>
 				  <div class='col-xs-4 form-group expiration required'>
 					<label class='control-label'> </label>
-					<input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
+					<input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text' name="year">
 				  </div>
 				</div>
 

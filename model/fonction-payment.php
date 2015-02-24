@@ -98,7 +98,9 @@ function verifCarte ($numeroCarte, &$numeroErreur, &$texteErreur) {
 	if ($typeCarte == -1) {
 		$numeroErreur = 0;     
 		$texteErreur = $typeErreur [$numeroErreur];
+		echo ($texteErreur);
 		return false; 
+		
 	}
 }
 
