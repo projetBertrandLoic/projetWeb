@@ -86,7 +86,8 @@ if (!empty($_POST['adresse'])) {
 			$request = "INSERT INTO user (`login`, `password`, `is_admin`, `nom`, `prenom`, `mail`) VALUES ('$login','$mdp',false,'$nom','$prenom','$email')";
 			$resultat = mysqli_query($co, $request) or die ("insertion de l'utilisateur en base impossible");
 			$id = mysqli_insert_id ($co);
-			?><span class="label label-success">Votre inscription a bien été prise en compte "<?php echo $login?>", bienvenu ! Merci de vous logguer</span><?php
+			?>
+			<div class="panel panel-success">Votre inscription a bien été prise en compte "<?php echo $login?>", bienvenu ! Merci de vous logguer</div><?php
 			unset($_SESSION['pseudo']);
 			unset($_SESSION['mdp']);
 			unset($_SESSION['prenom']);

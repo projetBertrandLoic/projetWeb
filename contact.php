@@ -18,57 +18,21 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="heading-section">
-                                <h2>Votre avis nous interesse</h2>
+                                <h2>Contactez nous !</h2>
                                 <img src="images/under-heading.png" alt="" >
                             </div>
                         </div>
                     </div>
-                    <div id="contact-us">
-                        <div class="container">
-                            <div class="row">
-                                <div class="product-item col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-8">  
-                                            <div class="message-form">
-                                                <form action="#" method="post" class="send-message">
-                                                    <div class="row">
-                                                    <div class="name col-md-4">
-                                                        <input type="text" name="name" id="name" placeholder="Name" />
-                                                    </div>
-                                                    <div class="email col-md-4">
-                                                        <input type="text" name="email" id="email" placeholder="Email" />
-                                                    </div>
-                                                    <div class="subject col-md-4">
-                                                        <input type="text" name="subject" id="subject" placeholder="Subject" />
-                                                    </div>
-                                                    </div>
-                                                    <div class="row">        
-                                                        <div class="text col-md-12">
-                                                            <textarea name="text" placeholder="Message"></textarea>
-                                                        </div>   
-                                                    </div>                              
-                                                    <div class="send">
-                                                        <button type="submit">Envoyer</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        
-										<div class="col-md-4">
-                                            <div class="info">
-                                                <p>N'hésitez pas à nous contacter au sujet d'un produit, d'une commande ou pour toutes autres informations complementaires </p>
-                                                <ul>
-                                                    <li><i class="fa fa-phone"></i>01 46 46 00 01</li>
-                                                    <li><i class="fa fa-globe"></i>Plateau du Moulon, Rue Noetzlin, 91400 Orsay</li>
-                                                    <li><i class="fa fa-envelope"></i><a href="#">RestoRap.com</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>     
-                                    </div>
-                                </div>
+						<div class="col-md-4">
+                            <div class="info">
+                                <p>N'hésitez pas, au sujet d'un produit, d'une commande ou pour toutes autres informations complementaires </p>
+                                <ul>
+                                    <li><i class="fa fa-phone"></i>01 46 46 00 01</li>
+                                    <li><i class="fa fa-globe"></i>Plateau du Moulon, Rue Noetzlin, 91400 Orsay</li>
+                                    <li><i class="fa fa-envelope"></i><a href="#">RestoRap.com</a></li>
+                                </ul>
                             </div>
-                        </div>
-                    </div>
+                        </div>     
                     <div class="row">
                         <div class="col-md-12">
                             <div class="heading-section">
@@ -88,7 +52,7 @@
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false">
         </script>
          
-		<!-- utilisation de l'api google pour centrer le resautant sur une carte --> 
+		<!-- utilisation de l'api google pour centrer le restaurant sur une carte --> 
         <script>
 		
 		var map;

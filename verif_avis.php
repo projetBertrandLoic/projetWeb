@@ -17,6 +17,7 @@ if (!empty($_POST['avis'])) {
 	<div class="panel panel-warning">Nous esperons vous avoir satisfait, à bientot !</div>
 	</div>
 	<?php
+	header ("Refresh: 2;URL=index.php");
 	
 }
 
@@ -27,7 +28,7 @@ if ((!empty($id_user)) && (!empty($date)) && (!empty($avis))){
 	
 	?><div class="panel panel-success">Merci pour votre avis <?php echo $_SESSION['nomUser'];?>  ,à bientot !</div>
 	<?php
-	
+	header ("Refresh: 2;URL=index.php");	
 }
 	
 	

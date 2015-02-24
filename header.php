@@ -93,7 +93,7 @@ ini_set('display_errors', 'On');
                                         <li><a href="index.php">Accueil</a></li>
                                         <li><a href="menu.php">Menu</a></li>
 										<li><a href="panier.php">Mon panier</a></li>
-                                        <li><a href="contact.php">Nous contacter</a></li>
+                                        <li><a href="contact.php">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>

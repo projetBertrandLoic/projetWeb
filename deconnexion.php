@@ -5,7 +5,7 @@
 		
 		session_destroy();
 		
-		?><span class="label label-success">Vous etes bien deconnecté</span>
+		?><div class="panel panel-success">Vous etes bien deconnecté</div>
 		
 		<div >
 			<form class="form-horizontal" action='index.php' method="POST">
@@ -16,6 +16,7 @@
 		
 		
 		<?php
+		header ("Refresh: 2;URL=index.php");
 		include_once('footer.php');
 		
 		?>
