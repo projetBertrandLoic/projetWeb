@@ -141,7 +141,7 @@
 											</div>
 											<div class='content-hide'>
 												<p> <?=$item['description']?> </p>
-												<button class='btn btn-primary btn-sm'>Ajouter</button>
+												<a href= "panier.php?action=ajout&l=<?=$item['id_article'];?>&q=1"<button class="btn btn-primary btn-sm">Ajouter</button><a>
 											</div>
 										</div>
 									</div>
