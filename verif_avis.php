@@ -8,10 +8,8 @@ $date = date("Y-m-d H:i:s");
 if (isset($_SESSION['id_client'])) {
 	$id_user = $_SESSION['id_client'];
 }
-echo $id_user;
 
-echo $date;
-if (isset($_POST['avis'])) {
+if (!empty($_POST['avis'])) {
 	$avis = $_POST['avis'];
 }else{
 	?>
@@ -21,20 +19,21 @@ if (isset($_POST['avis'])) {
 	<?php
 	
 }
-echo $avis;	
 
-	if ((!empty($id_user)) && (!empty($date)) && (!empty($avis))){
-		$request = "INSERT INTO avis_client ('id_user', 'date', 'texte') VALUES ('$id_user','$date','$avis')";
-		$resultat = mysqli_query($co, $request) or die ("insertion de l'avis en base impossible");
-		$id = mysqli_insert_id ($co);
-	}
+if ((!empty($id_user)) && (!empty($date)) && (!empty($avis))){
+	$request = "INSERT INTO avis_client (id_user, date, texte) VALUES ('$id_user','$date','$avis')";
+	$resultat = mysqli_query($co, $request) or die ("insertion de l'avis en base impossible");
+	$id = mysqli_insert_id ($co);
+	
+	?><div class="panel panel-success">Merci pour votre avis <?php echo $_SESSION['nomUser'];?>  ,à bientot !</div>
+	<?php
+	
+}
 	
 	
 	
-	
-	
-	//sleep (4);	
-	header("Location: index.php");	
+include_once("footer.php");
+		
 
 
 ?>
