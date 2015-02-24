@@ -6,7 +6,7 @@ include_once('fonctions-helper.php');
 
 function getArticles() {
 	global $co;
-	$request = "SELECT * FROM article ORDER BY id_article DESC, coup_de_coeur DESC";
+	$request = "SELECT * FROM article A, type_article TA WHERE A.id_type_article = TA.id_type_article ORDER BY id_article DESC, coup_de_coeur DESC";
 	$result = mysqli_query($co, $request);
 	$array = getArrayFromQueryResult($result);
 	return $array; 
@@ -14,7 +14,10 @@ function getArticles() {
 
 function getArticleById($id) {
 	global $co;
-	$request = "SELECT * FROM article WHERE id_article = " . htmlspecialchars($id);
+	
+	$id = mysqli_real_escape_string($co, $id);
+	
+	$request = "SELECT * FROM article A, type_article TA WHERE A.id_type_article = TA.id_type_article WHERE id_article = '$id'";
 	$result = mysqli_query($co, $request);
 	$array = mysqli_fetch_assoc($result);
 	return $array; 
@@ -42,26 +45,35 @@ function ajouterArticleCoupDeCoeur($titre, $desc, $prix, $idTypeArticle, $coupDe
 	$idTypeArticle = mysqli_real_escape_string($co, $idTypeArticle);
 	$coupDeCoeur = mysqli_real_escape_string($co, $coupDeCoeur);
 	
-	// TODO Appliquer les escape sur toutes les requêtes SQL.
 	$request = "INSERT INTO article (`titre`, `description`, `prix`, `date_ajout`, `coup_de_coeur`, `id_type_article`) VALUES ";
 	$request .= "('$titre', '$desc', '$prix', NOW(), '$coupDeCoeur', '$idTypeArticle')";
 	
-	echo $request;
 	$success = mysqli_query($co, $request);
 	return mysqli_insert_id($co);
 }
 
-function editerArticle($id, $titre, $desc, $idTypeArticle, $prix) {
+function editerArticle($id, $titre, $desc, $idTypeArticle, $prix, $coupDeCoeur) {
 	global $co;
-	$request = "UPDATE article SET `titre` = '" . htmlspecialchars($titre) . "', `description` = '" . htmlspecialchars($desc) . "', `prix` = " . htmlspecialchars($prix) . "', `id_type_article` = " . htmlspecialchars($idTypeArticle) . " ";
-	$request .= " WHERE `id_article` = " . htmlspecialchars($id);
+	
+	$id = mysqli_real_escape_string($co, $id);
+	$titre = mysqli_real_escape_string($co, $titre);
+	$desc = mysqli_real_escape_string($co, $desc);
+	$prix = mysqli_real_escape_string($co, $prix);
+	$idTypeArticle = mysqli_real_escape_string($co, $idTypeArticle);
+	$coupDeCoeur = mysqli_real_escape_string($co, $coupDeCoeur);
+	
+	$request = "UPDATE article SET `titre` = '$titre', `description` = '$desc', `prix` = '$prix', `id_type_article` = '$idTypeArticle'";
+	$request .= " WHERE `id_article` = '$id'";
 	$success = mysqli_query($co, $request);
 	return $success;
 }
 
 function supprimerArticle($id) {
 	global $co;
-	$request = "DELETE FROM article WHERE `id_article` = " . htmlspecialchars($id);
+	
+	$id = mysqli_real_escape_string($co, $id);
+	
+	$request = "DELETE FROM article WHERE `id_article` = '$id'";
 	$success = mysqli_query($co, $request);
 	return $success;
 }
@@ -70,7 +82,10 @@ function supprimerArticle($id) {
 
 function getFirstImageForArticle($id) {
 	global $co;
-	$request = "SELECT * FROM image I, image_article IA WHERE I.id_image = IA.id_image AND IA.id_article =" . htmlspecialchars($id) . " LIMIT 1";
+	
+	$id = mysqli_real_escape_string($co, $id);
+	
+	$request = "SELECT * FROM image I, image_article IA WHERE I.id_image = IA.id_image AND IA.id_article = '$id' LIMIT 1";
 	$result = mysqli_query($co, $request);
 	$array = mysqli_fetch_assoc($result);
 	return $array; 
@@ -78,7 +93,10 @@ function getFirstImageForArticle($id) {
 
 function getImagesForArticle($id) {
 	global $co;
-	$request = "SELECT * FROM image I, image_article IA WHERE I.id_image = IA.id_image AND IA.id_article =" . htmlspecialchars($id);
+	
+	$id = mysqli_real_escape_string($co, $id);
+	
+	$request = "SELECT * FROM image I, image_article IA WHERE I.id_image = IA.id_image AND IA.id_article = '$id'";
 	$result = mysqli_query($co, $request);
 	$array = getArrayFromQueryResult($result);
 	return $array; 
@@ -87,22 +105,32 @@ function getImagesForArticle($id) {
 // TODO Vérifier que l'article existe avant d'insérer image
 function ajouterImageSurArticle($idArticle, $nomImg, $tailleImg, $typeImg, $blob) {
 	global $co;
+	
+	$idArticle = mysqli_real_escape_string($co, $idArticle);
+	$nomImg = mysqli_real_escape_string($co, $nomImg);
+	$tailleImg = mysqli_real_escape_string($co, $tailleImg);
+	$typeImg = mysqli_real_escape_string($co, $typeImg);
+	
 	$request = "INSERT INTO `image`(`nom`, `taille`, `type`, `blob`, `date`) ";
-	$request .= "VALUES ('" . htmlspecialchars($nomImg) . "','" . htmlspecialchars($tailleImg) . "','" . htmlspecialchars($typeImg) . "','" . addslashes($blob) . "',NOW())";
+	$request .= "VALUES ('$nomImg','$tailleImg','$typeImg','" . addslashes($blob) . "',NOW())";
 	$imgUploaded = mysqli_query($co, $request);
 	$operationComplete = false;
 	if ($imgUploaded) {
 		$idImage = mysqli_insert_id($co);
-		$request = "INSERT INTO `image_article`(`id_article`, `id_image`) VALUES (" . htmlspecialchars($idArticle) . "," . htmlspecialchars($idImage) . ")";
+		$request = "INSERT INTO `image_article`(`id_article`, `id_image`) VALUES ('$idArticle','$idImage')";
 		$operationComplete = mysqli_query($co, $request);
 	}
 	return $imgUploaded && $operationComplete;
 }
 
 function retirerImageSurArticle($idImage) {
-	$request = "DELETE FROM `image_article` WHERE `id_image` = ". htmlspecialchars($idImage);
+	global $co;
+	
+	$idImage = mysqli_real_escape_string($co, $idImage);
+	
+	$request = "DELETE FROM `image_article` WHERE `id_image` = '$idImage'";
 	mysqli_query($co, $request);
-	$request = "DELETE FROM `image` WHERE `id_image` = ". htmlspecialchars($idImage);
+	$request = "DELETE FROM `image` WHERE `id_image` = '$idImage'";
 	mysqli_query($co, $request);
 	return true;
 }
@@ -127,8 +155,12 @@ function retirerCoupDeCoeur($idArticle) {
 
 function actualiserCoupDeCoeur($idArticle, $coupDeCoeur) {
 	global $co;
-	$request = "UPDATE article SET `coup_de_coeur` = " . htmlspecialchars($coupDeCoeur);
-	$request .= " WHERE `id_article` = " . htmlspecialchars($id);
+	
+	$idArticle = mysqli_real_escape_string($co, $idArticle);
+	$coupDeCoeur = mysqli_real_escape_string($co, $coupDeCoeur);
+	
+	$request = "UPDATE article SET `coup_de_coeur` = '$coupDeCoeur'";
+	$request .= " WHERE `id_article` = '$idArticle'";
 	$success = mysqli_query($co, $request);
 	return $success;
 }
