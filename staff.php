@@ -50,8 +50,8 @@ $typesArticle = getTypesArticle();
 			</br>
 				<label class="col-sm-4 control-label">Est ce un coup de coeur ?</label>
 				<div class="col-sm-8">
-					<label class="radio-inline"> <input type="radio" name="coupDeCoeur"  value="true"> Oui </label>
-					<label class="radio-inline"> <input type="radio" name="coupDeCoeur"  value="false" checked> Non </label>						
+					<label class="radio-inline"> <input type="radio" name="coupDeCoeur"  value="1"> Oui </label>
+					<label class="radio-inline"> <input type="radio" name="coupDeCoeur"  value="0" checked> Non </label>						
 				</div>
 			</div>
 			<button type="submit" class="btn btn-default">Envoyer</button>
