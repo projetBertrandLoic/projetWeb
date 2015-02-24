@@ -8,9 +8,19 @@ include_once ("transfert.php");
 		transfert();
 		}
 		?>
-		<h1>Bienvenu sur l'interface administrateur</h1>
-		</br>
-			
+		<div id="heading">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-content">
+                                <h2>Administration</h2>
+                                <span>Index / <a href="Staff.php">Staff</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			</br>
 		<label for="titre">Envoi d'une image</label>
 			
 		<form enctype="multipart/form-data" action="#" method="post">

@@ -59,19 +59,20 @@
 							}
 						?>
 						-->
-						
-												<?php 
-							include_once ("model/fonctions-article.php");
+						<div class="row" id="Container">	
+							<?php 
+								include_once ("model/fonctions-article.php");
+								
+								// Alimentation auto de la base à chaque refresh, à virer
+								//ajouterArticleCoupDeCoeur("Hello world", "Ceci est un article Hello World", 9999.99, true);
+								// Fin alim
+								
+								$articles = getArticles();
+								
+								foreach ($articles as $item){
+									$image = getFirstImageForArticle($item['id_article']);
+							?>
 							
-							// Alimentation auto de la base à chaque refresh, à virer
-							//ajouterArticleCoupDeCoeur("Hello world", "Ceci est un article Hello World", 9999.99, true);
-							// Fin alim
-							
-							$articles = getArticles();
-						
-							foreach ($articles as $item){
-								$image = getFirstImageForArticle($item['id_article']);
-								?>
 								<div class="col-md-3 col-sm-6 mix portfolio-item Pizza">       
 									<div class="portfolio-wrapper">                
 										<div class="portfolio-thumb">
@@ -98,10 +99,10 @@
 									   </div>
 									</div>          
 								</div>
+								
 								<?php
-							}
-						?>
-						
+							}?>
+						</div>
 						
 						
 						
@@ -148,19 +149,7 @@
                    
                     </div>	
 				</div>
-				
-                    <div class="pagination">
-                        <div class="row">   
-                            <div class="col-md-12">
-                                <ul>    
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">>></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>            
+				</div>            
             </div>
 
 
