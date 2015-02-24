@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Mar 24 Février 2015 à 19:30
--- Version du serveur :  5.6.20
--- Version de PHP :  5.5.15
+-- Host: 127.0.0.1
+-- Generation Time: Feb 24, 2015 at 10:29 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,27 +17,32 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `projetweb`
+-- Database: `projetweb`
 --
+DROP DATABASE IF EXISTS `projetweb`;
+CREATE DATABASE IF NOT EXISTS `projetweb` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `projetweb`;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `article`
+-- Table structure for table `article`
 --
 
+DROP TABLE IF EXISTS `article`;
 CREATE TABLE IF NOT EXISTS `article` (
-`id_article` int(11) NOT NULL,
+  `id_article` int(11) NOT NULL AUTO_INCREMENT,
   `titre` varchar(150) NOT NULL,
   `description` varchar(300) NOT NULL,
   `prix` float NOT NULL,
   `date_ajout` datetime NOT NULL,
   `coup_de_coeur` tinyint(1) NOT NULL DEFAULT '0',
-  `id_type_article` int(4) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `id_type_article` int(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_article`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
--- Contenu de la table `article`
+-- Dumping data for table `article`
 --
 
 INSERT INTO `article` (`id_article`, `titre`, `description`, `prix`, `date_ajout`, `coup_de_coeur`, `id_type_article`) VALUES
@@ -47,18 +52,21 @@ INSERT INTO `article` (`id_article`, `titre`, `description`, `prix`, `date_ajout
 -- --------------------------------------------------------
 
 --
--- Structure de la table `avis_client`
+-- Table structure for table `avis_client`
 --
 
+DROP TABLE IF EXISTS `avis_client`;
 CREATE TABLE IF NOT EXISTS `avis_client` (
-`id_avis_client` int(11) NOT NULL,
+  `id_avis_client` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `date` datetime NOT NULL,
-  `texte` varchar(500) NOT NULL
+  `texte` varchar(500) NOT NULL,
+  PRIMARY KEY (`id_avis_client`,`id_user`),
+  KEY `fk_avis_client_user_idx` (`id_user`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Contenu de la table `avis_client`
+-- Dumping data for table `avis_client`
 --
 
 INSERT INTO `avis_client` (`id_avis_client`, `id_user`, `date`, `texte`) VALUES
@@ -68,20 +76,22 @@ INSERT INTO `avis_client` (`id_avis_client`, `id_user`, `date`, `texte`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `image`
+-- Table structure for table `image`
 --
 
+DROP TABLE IF EXISTS `image`;
 CREATE TABLE IF NOT EXISTS `image` (
-`id_image` int(11) NOT NULL,
+  `id_image` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(150) NOT NULL,
   `taille` varchar(50) NOT NULL,
   `type` varchar(45) NOT NULL,
   `blob` blob NOT NULL,
-  `date` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id_image`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
--- Contenu de la table `image`
+-- Dumping data for table `image`
 --
 
 INSERT INTO `image` (`id_image`, `nom`, `taille`, `type`, `blob`, `date`) VALUES
@@ -94,16 +104,19 @@ INSERT INTO `image` (`id_image`, `nom`, `taille`, `type`, `blob`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `image_article`
+-- Table structure for table `image_article`
 --
 
+DROP TABLE IF EXISTS `image_article`;
 CREATE TABLE IF NOT EXISTS `image_article` (
   `id_article` int(11) NOT NULL,
-  `id_image` int(11) NOT NULL
+  `id_image` int(11) NOT NULL,
+  PRIMARY KEY (`id_article`,`id_image`),
+  KEY `fk_image_article_image1_idx` (`id_image`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `image_article`
+-- Dumping data for table `image_article`
 --
 
 INSERT INTO `image_article` (`id_article`, `id_image`) VALUES
@@ -113,30 +126,35 @@ INSERT INTO `image_article` (`id_article`, `id_image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ligne_panier`
+-- Table structure for table `ligne_panier`
 --
 
+DROP TABLE IF EXISTS `ligne_panier`;
 CREATE TABLE IF NOT EXISTS `ligne_panier` (
   `id_article` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `quantite` int(11) NOT NULL DEFAULT '1'
+  `quantite` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_article`,`id_user`),
+  KEY `fk_ligne_panier_user_idx` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `type_article`
+-- Table structure for table `type_article`
 --
 
+DROP TABLE IF EXISTS `type_article`;
 CREATE TABLE IF NOT EXISTS `type_article` (
-`id_type_article` int(4) NOT NULL,
+  `id_type_article` int(4) NOT NULL AUTO_INCREMENT,
   `code_type` varchar(20) NOT NULL,
   `nom_type` varchar(100) NOT NULL,
-  `description_type` varchar(200) DEFAULT NULL
+  `description_type` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id_type_article`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Contenu de la table `type_article`
+-- Dumping data for table `type_article`
 --
 
 INSERT INTO `type_article` (`id_type_article`, `code_type`, `nom_type`, `description_type`) VALUES
@@ -148,125 +166,52 @@ INSERT INTO `type_article` (`id_type_article`, `code_type`, `nom_type`, `descrip
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
-`id_user` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `is_admin` tinyint(1) NOT NULL DEFAULT '0',
   `nom` varchar(200) NOT NULL,
   `prenom` varchar(200) NOT NULL,
   `mail` varchar(300) NOT NULL,
-  `adresse` varchar(300) NOT NULL
+  `adresse` varchar(300) NOT NULL,
+  PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Contenu de la table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `login`, `password`, `is_admin`, `nom`, `prenom`, `mail`, `adresse`) VALUES
 (1, 'valyhomme', 'pamela', 1, 'gisselmann', 'loic', '', '');
 
 --
--- Index pour les tables exportées
+-- Constraints for dumped tables
 --
 
 --
--- Index pour la table `article`
---
-ALTER TABLE `article`
- ADD PRIMARY KEY (`id_article`);
-
---
--- Index pour la table `avis_client`
+-- Constraints for table `avis_client`
 --
 ALTER TABLE `avis_client`
- ADD PRIMARY KEY (`id_avis_client`,`id_user`), ADD KEY `fk_avis_client_user_idx` (`id_user`);
+  ADD CONSTRAINT `fk_avis_client_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Index pour la table `image`
---
-ALTER TABLE `image`
- ADD PRIMARY KEY (`id_image`);
-
---
--- Index pour la table `image_article`
+-- Constraints for table `image_article`
 --
 ALTER TABLE `image_article`
- ADD PRIMARY KEY (`id_article`,`id_image`), ADD KEY `fk_image_article_image1_idx` (`id_image`);
+  ADD CONSTRAINT `fk_image_article_article1` FOREIGN KEY (`id_article`) REFERENCES `article` (`id_article`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_image_article_image1` FOREIGN KEY (`id_image`) REFERENCES `image` (`id_image`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Index pour la table `ligne_panier`
+-- Constraints for table `ligne_panier`
 --
 ALTER TABLE `ligne_panier`
- ADD PRIMARY KEY (`id_article`,`id_user`), ADD KEY `fk_ligne_panier_user_idx` (`id_user`);
-
---
--- Index pour la table `type_article`
---
-ALTER TABLE `type_article`
- ADD PRIMARY KEY (`id_type_article`);
-
---
--- Index pour la table `user`
---
-ALTER TABLE `user`
- ADD PRIMARY KEY (`id_user`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `article`
---
-ALTER TABLE `article`
-MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT pour la table `avis_client`
---
-ALTER TABLE `avis_client`
-MODIFY `id_avis_client` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT pour la table `image`
---
-ALTER TABLE `image`
-MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT pour la table `type_article`
---
-ALTER TABLE `type_article`
-MODIFY `id_type_article` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT pour la table `user`
---
-ALTER TABLE `user`
-MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- Contraintes pour les tables exportées
---
-
---
--- Contraintes pour la table `avis_client`
---
-ALTER TABLE `avis_client`
-ADD CONSTRAINT `fk_avis_client_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `image_article`
---
-ALTER TABLE `image_article`
-ADD CONSTRAINT `fk_image_article_article1` FOREIGN KEY (`id_article`) REFERENCES `article` (`id_article`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_image_article_image1` FOREIGN KEY (`id_image`) REFERENCES `image` (`id_image`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `ligne_panier`
---
-ALTER TABLE `ligne_panier`
-ADD CONSTRAINT `fk_ligne_panier_article1` FOREIGN KEY (`id_article`) REFERENCES `article` (`id_article`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_ligne_panier_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_ligne_panier_article1` FOREIGN KEY (`id_article`) REFERENCES `article` (`id_article`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_ligne_panier_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
