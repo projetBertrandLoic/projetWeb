@@ -84,7 +84,6 @@ if (!empty($_POST['adresse'])) {
 // si les conditions sont remplies --> inscription de l'utilisateur en BDD
 	if ((!empty($login)) && (!empty($mdp)) && (!empty($prenom)) && (!empty($nom)) && (!empty($email)) &&(!empty($adresse))&& $canSuscribe == true){
 			$request = "INSERT INTO user (`login`, `password`, `is_admin`, `nom`, `prenom`, `mail`) VALUES ('$login','$mdp',false,'$nom','$prenom','$email')";
-			echo $request;
 			$resultat = mysqli_query($co, $request) or die ("insertion de l'utilisateur en base impossible");
 			$id = mysqli_insert_id ($co);
 			?><span class="label label-success">Votre inscription a bien été prise en compte "<?php echo $login?>", bienvenu ! Merci de vous logguer</span><?php

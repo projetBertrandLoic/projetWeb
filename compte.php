@@ -7,12 +7,11 @@
 		if($info !== null)
 		{ 
 			?>
-			<h3 class="bg-warning">Veuillez vous connecter pour poursuivre votre navigation sur le site.</h3>
+			<div class="panel panel-warning">Veuillez vous connecter pour poursuivre votre navigation sur le site.</div>
 			<?php
 		}
 		?>
-		<h3>Avez vous un compte ?</h3>
-	</div>
+		</div>
 	<div class="modal-body">
 		<div class="well">
 			<ul class="nav nav-tabs">
