@@ -9,7 +9,6 @@
                         <div class="slider-caption">
                             <h1>Nos menus</h1>
                             <p>Venez consulter notre large selection d'hamburger</p>
-                           <!-- <br><br>eget tellus luctus fermentum.</p>-->
                             <a href="menu.php">Commander</a>
                         </div>
                       <img src="images/slide1.jpg" alt="" />
@@ -18,7 +17,6 @@
                         <div class="slider-caption">
                             <h1>Nos desserts</h1>
                             <p>Les meilleurs desserts jamais vu en Fast-Food </p>
-                           <!-- <br><br>consectetur tempor neque vitae iaculis. Aliquam erat volutpat.-->
                             <a href="menu.php">Commander</a>
                         </div>
                       <img src="images/slide2.jpg" alt="" />
@@ -26,11 +24,10 @@
                     <li>
                         <div class="slider-caption">
                             <h1>Nos Boissons</h1>
-                            <p>Un tres grand choix de boissons pour vous satisfaire</p>
-                          <!--  <br><br>ornare massa, quis dapibus quam condimentum id.</p>-->
+                            <p><font color="black">Un tres grand choix de boissons pour vous satisfaire</font></p>
                             <a href="menu.php">J'ai soif</a>
                         </div>
-                      <img src="images/pep.jpg" alt="" />
+                      <img src="images/slide4.jpg" alt="" />
                     </li>
                   </ul>
                 </div>
