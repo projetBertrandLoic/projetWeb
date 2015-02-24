@@ -23,7 +23,7 @@
                             </div>
                         </div>
                     </div>
-						<div class="col-md-4">
+						<div class="col-md-4 col-md-offset-4">
                             <div class="info">
                                 <p>N'hésitez pas, au sujet d'un produit, d'une commande ou pour toutes autres informations complementaires </p>
                                 <ul>

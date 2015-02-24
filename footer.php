@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-md-2">
 						<div class="bottom-footer">
-							<p>Copyright © 2015 <a href="#">Bertric</a></p>
+							<p>Copyright © 2015 RestoRap.com</p>
 						</div>
                     </div>
                 </div>

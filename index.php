@@ -141,6 +141,7 @@
 											</div>
 											<div class='content-hide'>
 												<p> <?=$item['description']?> </p>
+												<button class='btn btn-primary btn-sm'>Ajouter</button>
 											</div>
 										</div>
 									</div>

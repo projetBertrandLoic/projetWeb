@@ -47,6 +47,7 @@ $typesArticle = getTypesArticle();
 			</br>
 						
 			<div class="form-group">
+			</br>
 				<label class="col-sm-4 control-label">Est ce un coup de coeur ?</label>
 				<div class="col-sm-8">
 					<label class="radio-inline"> <input type="radio" name="coupDeCoeur"  value="true"> Oui </label>

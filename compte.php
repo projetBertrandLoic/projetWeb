@@ -3,15 +3,16 @@
 <div class="" id="loginModal">
 	<div class="modal-header">
 		<?php 
-		$info = (isset($_POST['info'])? $_POST['info']:  (isset($_GET['info'])? $_GET['info']:null )) ;
-		if($info !== null)
+			$info = (isset($_POST['info'])? $_POST['info']:  (isset($_GET['info'])? $_GET['info']:null )) ;
+			if($info !== null)
 		{ 
-			?>
-			<div class="panel panel-warning">Veuillez vous connecter pour poursuivre votre navigation sur le site.</div>
-			<?php
+		?>
+		<div class="panel panel-warning">Veuillez vous connecter pour poursuivre votre navigation sur le site.</div>
+		<?php
 		}
 		?>
-		</div>
+	</div>
+	
 	<div class="modal-body">
 		<div class="well">
 			<ul class="nav nav-tabs">
@@ -58,19 +59,24 @@
 					
 						<label><h4>Pseudo</h4></label>
 						<input type="text" name="pseud" value="<?php if(isset ($_SESSION['pseudo'])){echo $_SESSION['pseudo'];} ?>" class="input-large">
+						
 						<label><h4>Mot de passe</h4></label>
 						<input type="password" name="mdp" value="<?php if(isset ($_SESSION['mdp'])){echo $_SESSION['mdp'];} ?>" size= "100" MAXLENGTH="8" class="input-xlarge">
 						<span class=""> 8 caractéres maximum</span>
 						</br>
 						<label><h4>Prenom</h4></label>
 						<input type="text" name="first" value="<?php if(isset ($_SESSION['prenom'])){echo $_SESSION['prenom'];} ?>" class="input-xlarge">
+						
 						<label><h4>Nom de famille</h4></label>
 						<input type="text" name="last" value="<?php if(isset ($_SESSION['nom'])){echo $_SESSION['nom'];} ?>" class="input-xlarge">
+						
 						<label><h4>Email</h4></label>
 						<input type="text" name="mail" value="<?php if(isset ($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="input-xlarge">
+						
 						<label><h4>Adresse</h4></label>
 						<input type="text" name="adresse" value="<?php if(isset ($_SESSION['adresse'])){echo $_SESSION['adresse'];} ?>" class="input-xlarge">
 						</br>
+						
 						<div>
 							<button class="btn btn-primary" type="submit">Creer un compte</button>
 						</div>
