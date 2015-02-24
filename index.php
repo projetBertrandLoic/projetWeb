@@ -114,7 +114,6 @@
 							include_once ("model/fonctions-article.php");
 							
 							// Alimentation auto de la base à chaque refresh, à virer
-							//ajouterArticleCoupDeCoeur("Hello world", "Ceci est un article Hello World", 9999.99, true);
 							// Fin alim
 							
 							$coupsDeCoeur = getCoupsDeCoeur();
@@ -130,7 +129,7 @@
 												echo '<img src="data:'.$image['type'].';base64,'.base64_encode($image['blob']).'" />';
 											} else {
 												?>
-												<img alt="" src="images/blogpost6.jpg">											
+												<img alt="" src="images/recent-post3.jpg">											
 												<?php
 											}
 											?>
