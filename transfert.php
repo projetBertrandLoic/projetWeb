@@ -1,6 +1,6 @@
 <?php
 include_once("model/fonctions-article.php");
-function transfert ()
+function transfert ($id_article)
 {
 	$ret = false;
 	$img_blob = '';
@@ -29,7 +29,7 @@ function transfert ()
 
 	
 		// Ajout d'un article bidon pour test l'image, à virer par la suite (remplacer avec un ID trouvé dynamiquement)
-		$id_article = ajouterArticleCoupDeCoeur("Yo", "Image ?", 5, true);	
+		//$id_article = ajouterArticleCoupDeCoeur("Yo", "Image ?", 5, true);	
 		// Enregistrement de l'image
 		
 		return ajouterImageSurArticle($id_article, $img_nom, $img_taille, $img_type, $img_blob);
