@@ -1,7 +1,7 @@
-<?php
-
-include_once("header.php");   
+<?php  
+include_once("header.php"); 
 include_once("model/redirect-if-not-logged.php");
+include_once("model/fonctions-article.php");
 include_once ("transfert.php");
 $transferable = false;
 	
@@ -34,6 +34,24 @@ if (!empty($_POST['description'])){
 	echo "</br>";
 }
 
+if (!empty($_POST['type'])){
+	$type = $_POST['type'];
+	$_SESSION['type'] = $type;
+	
+}else{
+	?><span class="label label-danger">Type article manquante</span><?php
+	header ("Refresh: 2;URL=staff.php");
+	echo "</br>";
+}
+
+if (!empty($_POST['coupDeCoeur'])){
+	$coupDeCoeur = $_POST['coupDeCoeur'];
+	$_SESSION['coupDeCoeur'] = $coupDeCoeur;
+}else{
+	?><span class="label label-danger">Information sur choix coup de coeur manquante</span><?php
+	header ("Refresh: 2;URL=staff.php");
+	echo "</br>";
+}
 
 if (empty($_FILES['fic'])){
 	?><span class="label label-danger">Image manquante</span><?php
@@ -47,9 +65,8 @@ if ((!empty($_POST['titre'])) && (!empty($_POST['prix'])) && (!empty($_POST['des
 }	
 	
 if ($transferable == true){
-transfert(ajouterArticleCoupDeCoeur("$titre","$description","$prix",true));
+$idNouvelArticle = ajouterArticleCoupDeCoeur("$titre","$description",$prix,$type,$coupDeCoeur);
+transfert($idNouvelArticle);
 ?><div class="panel panel-success">Vous avez bien inseré votre nouvel article</div><?php
 header ("Refresh: 5;URL=staff.php");	
-}
-		
-include_once("footer.php");   		
+} 		

@@ -27,11 +27,7 @@ function transfert ($id_article)
 		$img_nom = $_FILES['fic']['name'];
 		$img_blob = file_get_contents ($_FILES['fic']['tmp_name']);
 
-	
-		// Ajout d'un article bidon pour test l'image, à virer par la suite (remplacer avec un ID trouvé dynamiquement)
-		//$id_article = ajouterArticleCoupDeCoeur("Yo", "Image ?", 5, true);	
 		// Enregistrement de l'image
-		
 		return ajouterImageSurArticle($id_article, $img_nom, $img_taille, $img_type, $img_blob);
 	}
 }
