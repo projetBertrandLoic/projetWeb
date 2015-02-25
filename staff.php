@@ -11,7 +11,7 @@ $typesArticle = getTypesArticle();
                         <div class="col-md-12">
                             <div class="heading-content">
                                 <h2>Administration</h2>
-                                <span>Index / <a href="Staff.php">Staff</a></span>
+                                <span>gestion image / menu / coup de coeur</span>
                             </div>
                         </div>
                     </div>

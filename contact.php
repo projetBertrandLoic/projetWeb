@@ -5,8 +5,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="heading-content">
-                                <h2>Contact Us</h2>
-                                <span>Home / <a href="contact.php">Contactez nous</a></span>
+                                <h2>Nos Contacts</h2>
+                                <span>Telephone / Mail / Adresse  <!--<a href="contact.php">Contactez nous</a>--></span>
                             </div>
                         </div>
                     </div>

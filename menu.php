@@ -11,7 +11,7 @@ $typesArticle = getTypesArticle();
                         <div class="col-md-12">
                             <div class="heading-content">
                                 <h2>Notre menu</h2>
-                                <span>Index / <a href="about-us.html">Produits</a></span>
+                                <span>Dessert / burger / pizza / boisson</span>
                             </div>
                         </div>
                     </div>
