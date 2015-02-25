@@ -24,11 +24,11 @@ function verifCarte ($numeroCarte, &$numeroErreur, &$texteErreur) {
 
   $numeroErreur = 0;
 
-  $typeErreur [0] = "carte inconnue";
-  $typeErreur [1] = "aucune carte saisie";
-  $typeErreur [2] = "format de carte invalide";
+  $typeErreur [0] = "Carte Inconnue";
+  $typeErreur [1] = "Aucune CB saisie";
+  $typeErreur [2] = "Format de CB invalide";
   $typeErreur [3] = "Prefixe invalide";
-  $typeErreur [4] = "taille saisie non correspondante";
+  $typeErreur [4] = "Taille saisie non correspondante";
                
   // Definir le type de carte
   $typeCarte = -1;

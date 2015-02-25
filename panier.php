@@ -68,7 +68,7 @@ if (!$erreur){
 
 	<div class="row">
 		<div class="col-md-12">
-			<form method="post" action="panier.php">
+			<form method="post" action="panier.php" >
 				<table class="table table-bordered">
 					<thead>
 						<tr>

@@ -11,6 +11,7 @@ if (isset($_SESSION['id_client'])) {
 
 if (!empty($_POST['avis'])) {
 	$avis = $_POST['avis'];
+	$avis = mysqli_real_escape_string($co, $avis); ////  echapement des caracteres speciaux dans l'avis laissé par le client avant insertion en base
 }else{
 	?>
 	<div class="modal-body">

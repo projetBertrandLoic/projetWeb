@@ -39,7 +39,7 @@ if (!empty($_POST['type'])){
 	$_SESSION['type'] = $type;
 	
 }else{
-	?><span class="label label-danger">Type article manquante</span><?php
+	?><span class="label label-danger">Type article manquant</span><?php
 	header ("Refresh: 2;URL=staff.php");
 	echo "</br>";
 }
@@ -48,17 +48,17 @@ if (!empty($_POST['coupDeCoeur'])){
 	$coupDeCoeur = $_POST['coupDeCoeur'];
 	$_SESSION['coupDeCoeur'] = $coupDeCoeur;
 }else{
-	?><span class="label label-danger">Information sur choix coup de coeur manquante</span><?php
+	?><span class="label label-danger">Information coup de coeur manquante</span><?php
 	header ("Refresh: 2;URL=staff.php");
 	echo "</br>";
 }
 
-if (empty($_FILES['fic'])){
+if (!isset($_FILES['fic'])){
 	?><span class="label label-danger">Image manquante</span><?php
 	echo "</br>";
 }	
 		
-if ((!empty($_POST['titre'])) && (!empty($_POST['prix'])) && (!empty($_POST['description'])) && (!empty($_FILES['fic'])) ){
+if ((!empty($_POST['titre'])) && (!empty($_POST['prix'])) && (!empty($_POST['description'])) && (isset($_FILES['fic'])) ){
 	$transferable = true;
 }else{
 	?><span class="label label-danger">Il vous manque des éléments , verifiez et réessayer</span><?php
@@ -67,6 +67,11 @@ if ((!empty($_POST['titre'])) && (!empty($_POST['prix'])) && (!empty($_POST['des
 if ($transferable == true){
 $idNouvelArticle = ajouterArticleCoupDeCoeur("$titre","$description",$prix,$type,$coupDeCoeur);
 transfert($idNouvelArticle);
+unset($_SESSION['titre']);
+unset($_SESSION['prix']);
+unset($_SESSION['type']);
+unset($_SESSION['description']);
+unset($_SESSION['coupDeCoeur']);
 ?><div class="panel panel-success">Vous avez bien inseré votre nouvel article</div><?php
-header ("Refresh: 5;URL=staff.php");	
+header ("Refresh: 2;URL=staff.php");	
 } 		

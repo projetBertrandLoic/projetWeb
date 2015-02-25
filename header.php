@@ -40,8 +40,14 @@ ini_set('display_errors', 'On');
 										echo "<a href='compte.php'> Mon compte</a>";
 									}else{
 										 echo "<a href='deconnexion.php'> Deconnexion</a>";
-                                    	 echo "Bonjour, ".$_SESSION['nomUser'];
-									}?>
+                                    	 echo "Bonjour, ".$_SESSION['nomUser']."   ";
+									}
+									if (isset($_SESSION['is_admin']))	{
+										if ($_SESSION['is_admin'] == true){
+											?><a href='staff.php'>     Administration</a><?php
+										}
+									}
+									?>
                                 </div>
                             </div>
 							
@@ -74,6 +80,7 @@ ini_set('display_errors', 'On');
 									?>
                                 </div>
                             </div>
+
 							<!--*****************************************************fin de bloc du panier*****************************************************-->
 							
                         </div>
