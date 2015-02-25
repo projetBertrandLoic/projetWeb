@@ -58,7 +58,7 @@ if (!isset($_FILES['fic'])){
 	echo "</br>";
 }	
 		
-if ((!empty($_POST['titre'])) && (!empty($_POST['prix'])) && (!empty($_POST['description'])) && (isset($_FILES['fic'])) ){
+if ((!empty($_POST['titre'])) && (!empty($_POST['prix'])) && (!empty($_POST['description'])) && (isset($_FILES['fic'])) && (!empty($_POST['coupDeCoeur'])) ){
 	$transferable = true;
 }else{
 	?><span class="label label-danger">Il vous manque des éléments , verifiez et réessayer</span><?php
