@@ -129,7 +129,7 @@
 												echo '<img src="data:'.$image['type'].';base64,'.base64_encode($image['blob']).'" />';
 											} else {
 												?>
-												<img alt="" src="images/recent-post3.jpg">											
+												<img alt="" src="images/Stop.png">											
 												<?php
 											}
 											?>
