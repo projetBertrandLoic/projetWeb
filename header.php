@@ -37,14 +37,14 @@ ini_set('display_errors', 'On');
                             <div class="col-md-8">
                                 <div class="utilisateurs">
                                     <?php if(!isset($_SESSION['nomUser'])){
-										echo "<a href='compte.php'> Mon compte</a>";
+										echo "<a href='compte.php'>Mon compte</a>";
 									}else{
-										 echo "<a href='deconnexion.php'> Deconnexion</a>";
+										 echo "<a href='deconnexion.php'>Deconnexion</a>";
                                     	 echo "Bonjour, ".$_SESSION['nomUser']."   ";
 									}
 									if (isset($_SESSION['is_admin']))	{
 										if ($_SESSION['is_admin'] == true){
-											?><a href='staff.php'>     Administration</a><?php
+											?><a href='staff.php'>Administration</a><?php
 										}
 									}
 									?>
