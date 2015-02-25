@@ -17,7 +17,7 @@ function getArticleById($id) {
 	
 	$id = mysqli_real_escape_string($co, $id);
 	
-	$request = "SELECT * FROM article A, type_article TA WHERE A.id_type_article = TA.id_type_article WHERE id_article = '$id'";
+	$request = "SELECT * FROM article A, type_article TA WHERE A.id_type_article = TA.id_type_article AND id_article = '$id'";
 	$result = mysqli_query($co, $request);
 	$array = mysqli_fetch_assoc($result);
 	return $array; 

@@ -136,12 +136,12 @@
 										</div>
 										<div class='blog-content'>
 											<div class='content-show'>
-												<h4><a href='article.php'> <?=$item['titre']?></a></h4>
+												<h4><a href='article.php?id=<?=$item['id_article']?>'> <?=$item['titre']?></a></h4>
 												<span> <?=$item['date_ajout']?> </span>
 											</div>
 											<div class='content-hide'>
 												<p> <?=$item['description']?> </p>
-												<a href= "panier.php?action=ajout&l=<?=$item['id_article'];?>&q=1"<button class="btn btn-primary btn-sm">Ajouter</button><a>
+												<a href= "panier.php?action=ajout&l=<?=$item['id_article'];?>&q=1"><button class="btn btn-primary btn-sm">Ajouter</button><a>
 											</div>
 										</div>
 									</div>
